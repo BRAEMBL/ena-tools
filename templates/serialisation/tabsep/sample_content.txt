@@ -1,0 +1,42 @@
+[%- USE AsTabSep     %]
+[%- USE NoEmptyLines %]
+[%- USE NoLeadingWhitespace %]
+[% FILTER NoEmptyLines %]
+#
+# [% FILTER NoLeadingWhitespace -%]
+  [% FILTER AsTabSep %]
+      Ena type
+      ENA accession
+      ENA external accession
+      Alias
+      Title
+      Taxon id
+      Scientific name
+      Common name
+      Description
+      Sample attributes
+      Center name
+      Broker name
+  [% END %]
+[% END %]
+# 
+[% FILTER NoLeadingWhitespace %]
+    [% FOREACH current_sample = study.sample.keys.sort %]
+        [% FILTER AsTabSep %]
+            sample
+            ENA_accession_for_[% study.sample.${current_sample}.alias %]_goes_here
+            ENA_external_accession_for_[% study.sample.${current_sample}.alias %]_goes_here
+            [% study.sample.${current_sample}.alias %]
+            [% study.sample.${current_sample}.title %]
+            [% study.sample.${current_sample}.taxon_id %]
+            [% study.sample.${current_sample}.scientific_name %]
+            [% study.sample.${current_sample}.common_name %]
+            [% study.sample.${current_sample}.description %]
+            [% study.sample.${current_sample}.attributes.key_value_list %]
+            [% study.center_name %]
+            [% study.broker_name %]
+        [% END %]
+    [% END %]
+[% END %]
+
+[% END %]

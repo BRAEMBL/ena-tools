@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<STUDY_SET xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/SRA.study.xsd">
+    <STUDY alias="[% study.alias %]" center_name="[% study.center_name %]">
+        <DESCRIPTOR>
+            <STUDY_TITLE>[% study.title %]</STUDY_TITLE>
+            <STUDY_TYPE existing_study_type="[% study.existing_study_type %]" />
+            <STUDY_ABSTRACT>[% study.abstract %]</STUDY_ABSTRACT>
+        </DESCRIPTOR>
+[% IF study.attributes.keys.length %]
+
+	<STUDY_ATTRIBUTES>
+
+    [% FOREACH current_attribute = study.attributes.keys %]
+
+            <STUDY_ATTRIBUTE>
+                <TAG>[% current_attribute %]</TAG>
+                <VALUE>[% study.attributes.${current_attribute} %]</VALUE>
+            </STUDY_ATTRIBUTE>
+
+    [% END %]
+
+        </STUDY_ATTRIBUTES>
+[% END %]
+
+    </STUDY>
+</STUDY_SET>

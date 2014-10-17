@@ -1,0 +1,29 @@
+[%- USE AsTabSep     %]
+[%- USE NoEmptyLines %]
+[%- USE NoLeadingWhitespace %]
+#
+# [% FILTER NoEmptyLines -%]
+[% FILTER NoLeadingWhitespace %]
+
+  [% FILTER AsTabSep %]
+    Ena type
+    ENA accession
+    Alias
+    Center name
+    Title
+    Study attributes
+    Abstract
+  [% END %]
+#
+  [% FILTER AsTabSep %]
+    study
+    ENA_accession_for_[% study.alias %]_study_goes_here
+    [% study.alias %]
+    [% study.center_name %]
+    [% study.title %]
+    [% study.attributes.key_value_list %]
+    [% study.abstract %]
+  [% END %]
+
+[% END %]
+[% END %]

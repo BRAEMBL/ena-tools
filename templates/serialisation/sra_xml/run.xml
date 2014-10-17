@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RUN_SET  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/SRA.run.xsd">
+
+[% FOREACH current_sample = study.sample.keys.sort %]
+
+  [%- all_experiments = study.sample.${current_sample}.experiment -%]
+  
+  [%- FOREACH current_experiment = all_experiments -%]
+  
+    [%- all_runs = current_experiment.run -%]
+    
+    [% FOREACH current_run = all_runs %]      
+  
+    <RUN alias="[% current_run.alias %]" run_center="[% current_run.run_center %]">
+    
+        <EXPERIMENT_REF
+	    refname   = "[% current_experiment.refname %]"
+	    refcenter = "[% current_experiment.center %]"
+	/>
+
+         <DATA_BLOCK>
+            <FILES>
+                [% FOREACH current_file = current_run.file %]
+                <FILE
+		    filename        = "[% current_file.ftp_file_name %]"
+                    filetype        = "fastq"
+                    checksum_method = "MD5"
+                    checksum        = "[% current_file.checksum %]"
+		/>
+                [% END %]
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    [% END %]
+  [% END %]
+[% END %]
+
+</RUN_SET>

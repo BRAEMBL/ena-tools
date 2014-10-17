@@ -1,0 +1,42 @@
+[%- USE AsTabSep     %]
+[%- USE NoEmptyLines %]
+[%- USE NoLeadingWhitespace %]
+[%- FILTER NoLeadingWhitespace %]
+#
+# [%- FILTER AsTabSep -%]
+    Ena type
+    ENA accession
+    Sample name
+    Reference to experiment
+    Run Alias
+    File name on ftp site
+    File type
+    Checksum method
+    Checksum
+    Center name
+    Center submitting the experiment
+[% END %]
+#
+[% FILTER NoEmptyLines %]
+  [% FOREACH current_sample = study.sample.keys.sort %]
+    [% FOREACH current_run = study.sample.${current_sample}.experiment.run %]
+      [% FOREACH current_file = current_run.file.sort %]
+        [% FILTER AsTabSep %]
+          run
+          ENA_accession_for_[% current_run.alias %]_goes_here     
+          [% current_sample %]    
+          [% study.sample.${current_sample}.experiment.refname %] 
+          [% current_run.alias %] 
+          [% current_file.ftp_file_name %]        
+          fastq   
+          MD5     
+          [% current_file.checksum %]     
+          [% current_run.center_name %]
+          [% study.sample.${current_sample}.experiment.refcenter %]
+        [% END %]
+      [% END %]
+    [% END %]
+  [% END %]
+[% END %]
+
+[% END %]

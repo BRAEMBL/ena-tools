@@ -1,0 +1,14 @@
+[%- USE AsTabSep     %]
+[%- USE NoEmptyLines %]
+[%- USE NoLeadingWhitespace %]
+[% FILTER NoEmptyLines %]
+  [% FILTER NoLeadingWhitespace -%]
+
+    [% INCLUDE submission.txt %]
+    [% INCLUDE study_content.txt %]
+    [% INCLUDE sample_content.txt %]
+    [% INCLUDE experiment_content.txt %]
+    [% INCLUDE run_content.txt %]
+
+  [% END %]
+[% END %]

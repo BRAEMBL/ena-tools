@@ -1,0 +1,44 @@
+[%- USE AsTabSep     %]
+[%- USE NoEmptyLines %]
+[%- USE NoLeadingWhitespace %]
+#
+# [% FILTER NoLeadingWhitespace -%]
+    [%- FILTER AsTabSep %]
+        Ena type
+        ENA accession   
+        Experiment reference    
+        Length of insert    
+        Stddev of insert    
+        Reference to study      
+        Reference to sample     
+        Library name    
+        Library strategy        
+        Library source  
+        Library selection       
+        Instrument model        
+        Center name     
+        Broker name
+    [%- END %]
+#
+
+    [% FILTER NoEmptyLines %]
+        [% FOREACH current_sample = study.sample.keys.sort %]
+            [%- FILTER AsTabSep %]
+                experiment
+                ENA_accession_for_[% study.sample.${current_sample}.experiment.refname %]_goes_here
+                [% study.sample.${current_sample}.experiment.refname %]
+                [% study.sample.${current_sample}.experiment.library_layout_paired_nominal_length %]
+                [% study.sample.${current_sample}.experiment.library_layout_paired_stddev %]
+                [% study.alias %]
+                [% study.sample.${current_sample}.alias %]
+                [% study.sample.${current_sample}.experiment.library_name      %]
+                [% study.sample.${current_sample}.experiment.library_strategy  %]
+                [% study.sample.${current_sample}.experiment.library_source    %]
+                [% study.sample.${current_sample}.experiment.library_selection %]
+                Illumina HiSeq 2000
+                [% study.sample.${current_sample}.experiment.center %]
+                [% study.broker_name %]
+            [% END %]
+        [% END %]
+    [% END %]
+[% END %]

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SUBMISSION_SET xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/SRA.submission.xsd">
+<SUBMISSION alias="[% study.alias %]" center_name="[% study.center_name %]">
+        <ACTIONS>
+[%#
+    See
+    
+    http://www.ebi.ac.uk/ena/about/sra_preparing_metadata#submission
+
+    for documentation on this file.
+%]
+[% FOR current_action_source_type IN action_source_type %]
+            <ACTION>
+                <[% action %] source="[% current_action_source_type %].xml" schema="[% current_action_source_type %]" />
+            </ACTION>
+[% END %]
+            <ACTION>
+                <HOLD HoldUntilDate="[% study.hold_until_date %]"/>
+            </ACTION>
+	</ACTIONS>
+    </SUBMISSION>
+    <SUBMISSION_ATTRIBUTE>
+    <TAG>SUBMISSION_TOOL</TAG>
+    <VALUE>braembl-ena-tools</VALUE>
+    <TAG>SUBMISSION_TOOL-VERSION</TAG>
+    <VALUE>0.01</VALUE>
+</SUBMISSION_ATTRIBUTE>
+</SUBMISSION_SET>

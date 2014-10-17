@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SAMPLE_SET>
+[%- FOREACH current_sample = study.sample.keys -%]
+
+    <SAMPLE alias="[% study.sample.${current_sample}.alias %]" center_name="[% study.center_name %]" broker_name="[% study.broker_name %]">
+	<TITLE>[% study.sample.${current_sample}.title %]</TITLE>
+	<SAMPLE_NAME>
+	  
+	    [%- IF study.sample.${current_sample}.taxon_id -%]
+	    <TAXON_ID>[% study.sample.${current_sample}.taxon_id %]</TAXON_ID>
+	    [%- END %]
+	    
+	    [%- IF study.sample.${current_sample}.scientific_name -%]
+	    <SCIENTIFIC_NAME>[% study.sample.${current_sample}.scientific_name %]</SCIENTIFIC_NAME>
+	    [%- END -%]
+	    
+	    [%- IF study.sample.${current_sample}.common_name -%]
+	    <COMMON_NAME>[% study.sample.${current_sample}.common_name %]</COMMON_NAME>
+	    [%- END -%]	    
+	    
+	</SAMPLE_NAME>
+	<DESCRIPTION>[% study.sample.${current_sample}.description %]</DESCRIPTION>
+
+    [%- IF study.sample.${current_sample}.attributes.keys.size -%]
+	<SAMPLE_ATTRIBUTES>
+
+	    [%- FOREACH current_attribute = study.sample.${current_sample}.attributes.keys -%]
+
+	    <SAMPLE_ATTRIBUTE>
+		<TAG>[% current_attribute %]</TAG>
+		<VALUE>[% study.sample.${current_sample}.attributes.${current_attribute} %]</VALUE>
+		[% IF study.sample.${current_sample}.attribute_units.defined(current_attribute) -%]
+		<UNITS>[% study.sample.${current_sample}.attribute_units.${current_attribute} %]</UNITS>
+		[%- END %]
+	    </SAMPLE_ATTRIBUTE>
+	    
+	    [%- END -%]
+	</SAMPLE_ATTRIBUTES>
+    [%- END -%]
+    </SAMPLE>
+[%- END -%]
+</SAMPLE_SET>

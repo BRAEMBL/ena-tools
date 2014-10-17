@@ -1,0 +1,15 @@
+#
+# [% FILTER AsTabSep -%]
+    Alias
+    ENA accession
+    Requested hold date
+    ENA confirmed hold date
+[% END %]
+#
+
+[% FILTER AsTabSep %]
+    [% study.alias %]
+    ENA_accession_for_[% study.alias %]_submission_goes_here
+    [% study.hold_until_date %]
+    study_private_until
+[% END %]

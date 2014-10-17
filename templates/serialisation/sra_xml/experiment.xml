@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EXPERIMENT_SET>
+
+[% FOREACH current_sample_name = study.sample.keys.sort %]
+[% current_sample = study.sample.${current_sample_name} %]
+
+  [% FOREACH current_experiment = current_sample.experiment %]
+
+  <EXPERIMENT
+    center_name = "[% study.center_name %]"
+    alias       = "[% current_experiment.refname %]"
+    broker_name = "[% study.broker_name %]"    
+  >
+    <IDENTIFIERS>
+      <SUBMITTER_ID namespace="[% study.center_name %]">[% current_experiment.refname %]</SUBMITTER_ID>
+    </IDENTIFIERS>
+    <STUDY_REF refname="[% study.alias %]" refcenter="[% study.center_name %]" />
+    <DESIGN>
+      <DESIGN_DESCRIPTION></DESIGN_DESCRIPTION>
+      <SAMPLE_DESCRIPTOR refname="[% current_sample.alias %]" refcenter="[% study.center_name %]" />
+      <LIBRARY_DESCRIPTOR>
+        
+      [% IF current_experiment.library_name -%]
+        <LIBRARY_NAME>[% current_experiment.library_name %]</LIBRARY_NAME>
+      [%- END -%]
+      
+      [% IF current_experiment.library_strategy -%]
+        <LIBRARY_STRATEGY>[% current_experiment.library_strategy %]</LIBRARY_STRATEGY>
+      [%- END -%]
+      
+      [% IF current_experiment.library_source -%]
+        <LIBRARY_SOURCE>[% current_experiment.library_source %]</LIBRARY_SOURCE>
+      [%- END -%]
+      
+      [% IF current_experiment.library_selection -%]
+        <LIBRARY_SELECTION>[% current_experiment.library_selection %]</LIBRARY_SELECTION>
+      [%- END -%]
+      
+        <LIBRARY_LAYOUT>
+        [% IF current_experiment.library_layout == 'PAIRED' %]
+          <PAIRED 
+          [%- IF current_experiment.library_layout_paired_stddev -%]
+              NOMINAL_SDEV="[% current_experiment.library_layout_paired_stddev -%]"
+          [%- END -%]
+          [%- IF current_experiment.library_layout_paired_nominal_length -%]
+              NOMINAL_LENGTH="[% current_experiment.library_layout_paired_nominal_length %]"
+          [%- END -%]
+          />
+        [%- END -%]
+
+      [%- IF current_experiment.library_layout == 'SINGLE' -%]
+        <SINGLE/>
+      [%- END %]
+        </LIBRARY_LAYOUT>
+          
+      </LIBRARY_DESCRIPTOR>
+    </DESIGN>
+
+    <PLATFORM>
+      <[% current_experiment.platform %]>
+        <INSTRUMENT_MODEL>[% current_experiment.instrument_model %]</INSTRUMENT_MODEL>
+      </[% current_experiment.platform %]>
+    </PLATFORM>
+    <PROCESSING/>
+
+
+      [%- IF current_experiment.attributes.keys.size -%]
+      
+      <EXPERIMENT_ATTRIBUTES>
+	[% FOREACH current_attribute = current_experiment.attributes.keys.sort -%]
+	<EXPERIMENT_ATTRIBUTE>
+	  <TAG>[% current_attribute %]</TAG>
+	  <VALUE>[% current_experiment.attributes.${current_attribute} %]</VALUE>
+	</EXPERIMENT_ATTRIBUTE>
+	[%- END %]
+      </EXPERIMENT_ATTRIBUTES>
+      [% END %]
+
+
+  </EXPERIMENT>
+  [% END %]
+[% END %]
+
+</EXPERIMENT_SET>
