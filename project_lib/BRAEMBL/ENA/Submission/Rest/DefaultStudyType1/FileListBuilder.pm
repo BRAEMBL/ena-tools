@@ -1,4 +1,4 @@
-package BRAEMBL::ENA::Submission::Rest::CoralGenome::FileListBuilder;
+package BRAEMBL::ENA::Submission::Rest::DefaultStudyType1::FileListBuilder;
 
 use Moose;
 

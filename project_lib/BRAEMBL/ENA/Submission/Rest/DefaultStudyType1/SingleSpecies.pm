@@ -1,4 +1,4 @@
-package BRAEMBL::ENA::Submission::Rest::CoralGenome::SingleSpecies;
+package BRAEMBL::ENA::Submission::Rest::DefaultStudyType1::SingleSpecies;
 
 use Moose::Role;
   

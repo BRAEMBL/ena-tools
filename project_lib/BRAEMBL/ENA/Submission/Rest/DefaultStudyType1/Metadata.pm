@@ -1,9 +1,9 @@
-package BRAEMBL::ENA::Submission::Rest::CoralGenome::Metadata;
+package BRAEMBL::ENA::Submission::Rest::DefaultStudyType1::Metadata;
 
 use Moose;
 
 with 'BRAEMBL::ENA::Submission::Metadata::Roles::Common';
-with 'BRAEMBL::ENA::Submission::Rest::CoralGenome::SingleSpecies';
+with 'BRAEMBL::ENA::Submission::Rest::DefaultStudyType1::SingleSpecies';
 with 'BRAEMBL::ENA::Submission::Metadata::Roles::MultipleExperiments';
 with 'BRAEMBL::ENA::Submission::Metadata::Roles::PairedEnd';
 

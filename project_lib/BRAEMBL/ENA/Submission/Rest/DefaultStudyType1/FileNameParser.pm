@@ -1,4 +1,4 @@
-package BRAEMBL::ENA::Submission::Rest::CoralGenome::FileNameParser;
+package BRAEMBL::ENA::Submission::Rest::DefaultStudyType1::FileNameParser;
 
 use Moose;
 
