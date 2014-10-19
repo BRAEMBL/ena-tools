@@ -1,0 +1,1252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CHECKLIST_SET>
+  <CHECKLIST alias="GSC MIxS human associated" center_name="EBI" accession="ERC000014" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <DESCRIPTOR>
+      <CHECKLIST_AUTHORITY>ENA</CHECKLIST_AUTHORITY>
+      <CHECKLIST_NAME>GSC MIxS human associated</CHECKLIST_NAME>
+      <CHECKLIST_DESCRIPTION>Genomic Standards Consortium package extension for reporting of
+                measurements and observations obtained from the environment where the sample was
+                obtained. By choosing the environmental package, a selection of fields can be made
+                from a relevant subsets of the GSC terms.</CHECKLIST_DESCRIPTION>
+      <CHECKLIST_VERSION>1</CHECKLIST_VERSION>
+      <CHECKLIST_TYPE>sample</CHECKLIST_TYPE>
+      <CHECKLIST_GROUP>
+        <GROUP>non-sample term</GROUP>
+        <DESCRIPTION/>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>investigation type</TAG>
+          <DESCRIPTION>Nucleic Acid Sequence Report is the root element of all MIGS/MIMS
+                        compliant reports as standardized by Genomic Standards Consortium. This
+                        field is either eukaryote,bacteria,virus,plasmid,organelle, metagenome,
+                        mimarks-survey or mimarks-culture</DESCRIPTION>
+          <MANDATORY>mandatory</MANDATORY>
+          <VALUE>
+            <TEXT_CHOICE>
+              <VALUE>metagenome</VALUE>
+              <VALUE>mimarks-survey</VALUE>
+            </TEXT_CHOICE>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>project name</TAG>
+          <DESCRIPTION>Name of the project within which the sequencing was
+                        organized</DESCRIPTION>
+          <MANDATORY>mandatory</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>experimental factor</TAG>
+          <DESCRIPTION>Experimental factors are essentially the variable aspects of an
+                        experiment design which can be used to describe an experiment, or set of
+                        experiments, in an increasingly detailed manner. This field accepts
+                        ontology terms from Experimental Factor Ontology (EFO) and/or Ontology for
+                        Biomedical Investigations (OBI). For a browser of EFO (v132) terms, please
+                        see http://bioportal.bioontology.org/visualize/44641; for a browser of OBI
+                        (v1.0) terms please see
+                        http://bioportal.bioontology.org/visualize/40832</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>nucleic acid extraction</TAG>
+          <DESCRIPTION>Link to a literature reference, electronic resource or a standard
+                        operating procedure (SOP)</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>nucleic acid amplification</TAG>
+          <DESCRIPTION>Link to a literature reference, electronic resource or a standard
+                        operating procedure (SOP)</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>library construction method</TAG>
+          <DESCRIPTION>Library construction method used for clone
+                        libraries</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>library vector</TAG>
+          <DESCRIPTION>Cloning vector type(s) used in construction of
+                        libraries</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>library screening strategy</TAG>
+          <DESCRIPTION>Specific enrichment or screening methods applied before and/or
+                        after creating clone libraries in order to select a specific group of
+                        sequences</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>target gene</TAG>
+          <DESCRIPTION>Targeted gene or locus name for marker gene studies</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>target subfragment</TAG>
+          <DESCRIPTION>Name of subfragment of a gene or locus. Important to e.g.
+                        identify special regions on marker genes like V6 on 16S rRNA</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>pcr primers</TAG>
+          <DESCRIPTION>PCR primers that were used to amplify the sequence of the
+                        targeted gene, locus or subfragment. This field should contain all the
+                        primers used for a single PCR reaction if multiple forward or reverse
+                        primers are present in a single PCR reaction. The primer sequence should
+                        be reported in uppercase letters</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>multiplex identifiers</TAG>
+          <DESCRIPTION>Molecular barcodes, called Multiplex Identifiers (MIDs), that are
+                        used to specifically tag unique samples in a sequencing run. Sequence
+                        should be reported in uppercase letters</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>adapters</TAG>
+          <DESCRIPTION>Adapters provide priming sequences for both amplification and
+                        sequencing of the sample-library fragments. Both adapters should be
+                        reported; in uppercase letters</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>pcr conditions</TAG>
+          <DESCRIPTION>Description of reaction conditions and components for PCR in the
+                        form of &apos;initial denaturation:94degC_1.5min; annealing=...&apos;</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>sequencing method</TAG>
+          <DESCRIPTION>Sequencing method used; e.g. Sanger, pyrosequencing,
+                        ABI-solid</DESCRIPTION>
+          <MANDATORY>mandatory</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>sequence quality check</TAG>
+          <DESCRIPTION>Indicate if the sequence has been called by automatic systems
+                        (none) or undergone a manual editing procedure (e.g. by inspecting the raw
+                        data or chromatograms). Applied only for sequences that are not submitted
+                        to SRA or DRA</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_CHOICE>
+              <VALUE>manual</VALUE>
+              <VALUE>software</VALUE>
+              <VALUE>none</VALUE>
+            </TEXT_CHOICE>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>chimera check</TAG>
+          <DESCRIPTION>A chimeric sequence, or chimera for short, is a sequence
+                        comprised of two or more phylogenetically distinct parent sequences.
+                        Chimeras are usually PCR artifacts thought to occur when a prematurely
+                        terminated amplicon reanneals to a foreign DNA strand and is copied to
+                        completion in the following PCR cycles. The point at which the chimeric
+                        sequence changes from one parent to the next is called the breakpoint or
+                        conversion point</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>relevant electronic resources</TAG>
+          <DESCRIPTION>-</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>relevant standard operating procedures</TAG>
+          <DESCRIPTION>Standard operating procedures used in assembly and/or annotation
+                        of genomes, metagenomes or environmental sequences</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>study completion status</TAG>
+          <DESCRIPTION>specification of study completion status, if no the reason should
+                        be specified</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_CHOICE>
+              <VALUE>Yes</VALUE>
+              <VALUE>No - adverse event</VALUE>
+              <VALUE>No - non-compliance</VALUE>
+              <VALUE>No - lost to follow up</VALUE>
+              <VALUE>No - other</VALUE>
+            </TEXT_CHOICE>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+      </CHECKLIST_GROUP>
+      <CHECKLIST_GROUP>
+        <GROUP>sample collection</GROUP>
+        <DESCRIPTION/>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>collection date</TAG>
+          <DESCRIPTION>The time of sampling, either as an instance (single point in
+                        time) or interval. In case no exact time is available, the date/time can
+                        be right truncated i.e. all of these are valid times:
+                        2008-01-23T19:23:10+00:00; 2008-01-23T19:23:10; 2008-01-23; 2008-01; 2008;
+                        Except: 2008-01; 2008 all are ISO8601 compliant</DESCRIPTION>
+          <MANDATORY>mandatory</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>source material identifiers</TAG>
+          <DESCRIPTION>The name of the culture collection, holder of the voucher or an
+                        institution. Could enumerate a list of common resources, just as the
+                        American Type Culture Collection (ATCC), German Collection of
+                        Microorganisms and Cell Cultures (DSMZ) etc. Can select not
+                        deposited</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>sample collection device or method</TAG>
+          <DESCRIPTION>The method or deviced employed for collecting the
+                        sample</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>sample material processing</TAG>
+          <DESCRIPTION>Any processing applied to the sample during or after retrieving
+                        the sample from environment. This field accepts OBI, for a browser of OBI
+                        (v1.0) terms please see
+                        http://bioportal.bioontology.org/visualize/40832</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>amount or size of sample collected</TAG>
+          <DESCRIPTION>Amount or size of sample (volume, mass or area) that was
+                        collected</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <REGEXP_VALUE>(0|((0\.)|([1-9][0-9]*\.?))[0-9]*)([Ee][+-]?[0-9]+)?</REGEXP_VALUE>
+          </VALUE>
+          <UNITS>
+            <UNIT>L</UNIT>
+            <UNIT>m3</UNIT>
+            <UNIT>g</UNIT>
+            <UNIT>kg</UNIT>
+            <UNIT>m2</UNIT>
+          </UNITS>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>body product</TAG>
+          <DESCRIPTION>substance produced by the body, e.g. stool, mucus, where the
+                        sample was obtained from</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>medical history performed</TAG>
+          <DESCRIPTION>whether full medical history was collected</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_CHOICE>
+              <VALUE>Yes</VALUE>
+              <VALUE>No</VALUE>
+            </TEXT_CHOICE>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>urine/collection method</TAG>
+          <DESCRIPTION>specification of urine collection method</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_CHOICE>
+              <VALUE>clean catch</VALUE>
+              <VALUE>catheter</VALUE>
+            </TEXT_CHOICE>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>oxygenation status of sample</TAG>
+          <DESCRIPTION>oxygenation status of sample</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_CHOICE>
+              <VALUE>aerobic</VALUE>
+              <VALUE>anaerobic</VALUE>
+            </TEXT_CHOICE>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>organism count</TAG>
+          <DESCRIPTION>total count of any organism per gram or volume of sample,should
+                        include name of organism followed by count; can include multiple organism
+                        counts</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>sample storage temperature</TAG>
+          <DESCRIPTION>temperature at which sample was stored, e.g. -80</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <REGEXP_VALUE>[+-]?(0|((0\.)|([1-9][0-9]*\.?))[0-9]*)([Ee][+-]?[0-9]+)?</REGEXP_VALUE>
+          </VALUE>
+          <UNITS>
+            <UNIT>?C</UNIT>
+          </UNITS>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>sample storage duration</TAG>
+          <DESCRIPTION>duration for which sample was stored</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <REGEXP_VALUE>(0|((0\.)|([1-9][0-9]*\.?))[0-9]*)([Ee][+-]?[0-9]+)?</REGEXP_VALUE>
+          </VALUE>
+          <UNITS>
+            <UNIT>hours</UNIT>
+            <UNIT>days</UNIT>
+            <UNIT>weeks</UNIT>
+            <UNIT>months</UNIT>
+            <UNIT>years</UNIT>
+          </UNITS>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>sample storage location</TAG>
+          <DESCRIPTION>location at which sample was stored, usually name of a specific
+                        freezer/room</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+      </CHECKLIST_GROUP>
+      <CHECKLIST_GROUP>
+        <GROUP>concentration measurement</GROUP>
+        <DESCRIPTION/>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>sample salinity</TAG>
+          <DESCRIPTION>salinity of sample, i.e. measure of total salt
+                        concentration</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <REGEXP_VALUE>(0|((0\.)|([1-9][0-9]*\.?))[0-9]*)([Ee][+-]?[0-9]+)?</REGEXP_VALUE>
+          </VALUE>
+          <UNITS>
+            <UNIT>psu</UNIT>
+          </UNITS>
+        </CHECKLIST_ATTRIBUTE>
+      </CHECKLIST_GROUP>
+      <CHECKLIST_GROUP>
+        <GROUP>host description</GROUP>
+        <DESCRIPTION/>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>host subject id</TAG>
+          <DESCRIPTION>a unique identifier by which each subject can be referred to,
+                        de-identified, e.g. #131</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>age</TAG>
+          <DESCRIPTION>age of host at the time of sampling; relevant scale depends on
+                        species and study, e.g. could be seconds for amoebae or centuries for
+                        trees</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <REGEXP_VALUE>(0|((0\.)|([1-9][0-9]*\.?))[0-9]*)([Ee][+-]?[0-9]+)?</REGEXP_VALUE>
+          </VALUE>
+          <UNITS>
+            <UNIT>seconds</UNIT>
+            <UNIT>minutes</UNIT>
+            <UNIT>hours</UNIT>
+            <UNIT>days</UNIT>
+            <UNIT>weeks</UNIT>
+            <UNIT>months</UNIT>
+            <UNIT>years</UNIT>
+            <UNIT>decades</UNIT>
+            <UNIT>centuries</UNIT>
+          </UNITS>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>sex</TAG>
+          <DESCRIPTION>physical sex of the host</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_CHOICE>
+              <VALUE>male</VALUE>
+              <VALUE>female</VALUE>
+              <VALUE>neuter</VALUE>
+              <VALUE>hermaphrodite</VALUE>
+              <VALUE>not determined</VALUE>
+            </TEXT_CHOICE>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>IHMC medication code</TAG>
+          <DESCRIPTION>can include multiple medication codes</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_CHOICE>
+              <VALUE>01=1=Analgesics/NSAIDS</VALUE>
+              <VALUE>02=2=Anesthetics</VALUE>
+              <VALUE>03=3=Antacids/H2 antagonists</VALUE>
+              <VALUE>04=4=Anti-acne</VALUE>
+              <VALUE>05=5=Anti-asthma/bronchodilators</VALUE>
+              <VALUE>06=6=Anti-cholesterol/Anti-hyperlipidemic</VALUE>
+              <VALUE>07=7=Anti-coagulants</VALUE>
+              <VALUE>08=8=Antibiotics/(anti)-infectives, parasitics,
+                                microbials</VALUE>
+              <VALUE>09=9=Antidepressants/mood-altering drugs</VALUE>
+              <VALUE>10=10=Antihistamines/ Decongestants</VALUE>
+              <VALUE>11=11=Antihypertensives</VALUE>
+              <VALUE>12=12=Cardiovascular, other than hyperlipidemic/HTN</VALUE>
+              <VALUE>13=13=Contraceptives (oral, implant, injectable)</VALUE>
+              <VALUE>14=14=Emergency/support medications</VALUE>
+              <VALUE>15=15=Endocrine/Metabolic agents</VALUE>
+              <VALUE>16=16=GI meds (anti-diarrheal, emetic, spasmodics)</VALUE>
+              <VALUE>17=17=Herbal/homeopathic products</VALUE>
+              <VALUE>18=18=Hormones/steroids</VALUE>
+              <VALUE>19=19=OTC cold &amp; flu</VALUE>
+              <VALUE>20=20=Vaccine prophylaxis</VALUE>
+              <VALUE>21=21=Vitamins, minerals, food supplements</VALUE>
+              <VALUE>99=99=Other</VALUE>
+            </TEXT_CHOICE>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>body site</TAG>
+          <DESCRIPTION>name of body site where the sample was obtained from -
+                        http://bioportal.bioontology.org/visualize/44507</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>total mass</TAG>
+          <DESCRIPTION>total mass of the host at collection, the unit depends on
+                        host</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <REGEXP_VALUE>(0|((0\.)|([1-9][0-9]*\.?))[0-9]*)([Ee][+-]?[0-9]+)?</REGEXP_VALUE>
+          </VALUE>
+          <UNITS>
+            <UNIT>g</UNIT>
+          </UNITS>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>height</TAG>
+          <DESCRIPTION>the height of subject</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <REGEXP_VALUE>(0|((0\.)|([1-9][0-9]*\.?))[0-9]*)([Ee][+-]?[0-9]+)?</REGEXP_VALUE>
+          </VALUE>
+          <UNITS>
+            <UNIT>m</UNIT>
+          </UNITS>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>phenotype</TAG>
+          <DESCRIPTION>phenotype of host. For Phenotypic quality Ontology (PATO)
+                        (v1.269) terms, please see
+                        http://bioportal.bioontology.org/visualize/44601</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>host body temperature</TAG>
+          <DESCRIPTION>core body temperature of the host when sample was
+                        collected</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <REGEXP_VALUE>[+-]?(0|((0\.)|([1-9][0-9]*\.?))[0-9]*)([Ee][+-]?[0-9]+)?</REGEXP_VALUE>
+          </VALUE>
+          <UNITS>
+            <UNIT>?C</UNIT>
+          </UNITS>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>drug usage</TAG>
+          <DESCRIPTION>any drug used by subject and the frequency of usage; can include
+                        multiple drugs used</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>body-mass index</TAG>
+          <DESCRIPTION>body mass index, calculated as
+                        weight/(height)squared</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <REGEXP_VALUE>(0|((0\.)|([1-9][0-9]*\.?))[0-9]*)([Ee][+-]?[0-9]+)?</REGEXP_VALUE>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>IHMC ethnicity</TAG>
+          <DESCRIPTION>ethnicity of the subject</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>occupation</TAG>
+          <DESCRIPTION>most frequent job performed by subject</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_CHOICE>
+              <VALUE>01=01 Accounting/Finance</VALUE>
+              <VALUE>02=02 Advertising/Public Relations</VALUE>
+              <VALUE>03=03 Arts/Entertainment/Publishing</VALUE>
+              <VALUE>04=04 Automotive</VALUE>
+              <VALUE>05=05 Banking/ Mortgage</VALUE>
+              <VALUE>06=06 Biotech</VALUE>
+              <VALUE>07=07 Broadcast/Journalism</VALUE>
+              <VALUE>08=08 Business Development</VALUE>
+              <VALUE>09=09 Clerical/Administrative</VALUE>
+              <VALUE>10=10 Construction/Trades</VALUE>
+              <VALUE>11=11 Consultant</VALUE>
+              <VALUE>12=12 Customer Services</VALUE>
+              <VALUE>13=13 Design</VALUE>
+              <VALUE>14=14 Education</VALUE>
+              <VALUE>15=15 Engineering</VALUE>
+              <VALUE>16=16 Entry Level</VALUE>
+              <VALUE>17=17 Executive</VALUE>
+              <VALUE>18=18 Food Service</VALUE>
+              <VALUE>19=19 Government</VALUE>
+              <VALUE>20=20 Grocery</VALUE>
+              <VALUE>21=21 Healthcare</VALUE>
+              <VALUE>22=22 Hospitality</VALUE>
+              <VALUE>23=23 Human Resources</VALUE>
+              <VALUE>24=24 Information Technology</VALUE>
+              <VALUE>25=25 Insurance</VALUE>
+              <VALUE>26=26 Law/Legal</VALUE>
+              <VALUE>27=27 Management</VALUE>
+              <VALUE>28=28 Manufacturing</VALUE>
+              <VALUE>29=29 Marketing</VALUE>
+              <VALUE>30=30 Pharmaceutical</VALUE>
+              <VALUE>31=31 Professional Services</VALUE>
+              <VALUE>32=32 Purchasing</VALUE>
+              <VALUE>33=33 Quality Assurance (QA)</VALUE>
+              <VALUE>34=34 Research</VALUE>
+              <VALUE>35=35 Restaurant</VALUE>
+              <VALUE>36=36 Retail</VALUE>
+              <VALUE>37=37 Sales</VALUE>
+              <VALUE>38=38 Science</VALUE>
+              <VALUE>39=39 Security/Law Enforcement</VALUE>
+              <VALUE>40=40 Shipping/Distribution</VALUE>
+              <VALUE>41=41 Strategy</VALUE>
+              <VALUE>42=42 Student</VALUE>
+              <VALUE>43=43 Telecommunications</VALUE>
+              <VALUE>44=44 Training</VALUE>
+              <VALUE>45=45 Transportation</VALUE>
+              <VALUE>46=46 Warehouse</VALUE>
+              <VALUE>47=47 Other</VALUE>
+              <VALUE>99=99 Unknown/Refused</VALUE>
+            </TEXT_CHOICE>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>perturbation</TAG>
+          <DESCRIPTION>type of perturbation, e.g. chemical administration, physical
+                        disturbance, etc., coupled with time that perturbation occurred; can
+                        include multiple perturbation types</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+      </CHECKLIST_GROUP>
+      <CHECKLIST_GROUP>
+        <GROUP>host details</GROUP>
+        <DESCRIPTION/>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>chemical administration</TAG>
+          <DESCRIPTION>list of chemical compounds administered to the host or site where
+                        sampling occurred, and when (e.g. antibiotics, N fertilizer, air filter);
+                        can include multiple compounds. For Chemical Entities of Biological
+                        Interest ontology (CHEBI) (v1.72), please see
+                        http://bioportal.bioontology.org/visualize/44603</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>diet</TAG>
+          <DESCRIPTION>type of diet depending on the host, for animals omnivore,
+                        herbivore etc., for humans high-fat, meditteranean etc.; can include
+                        multiple diet types</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>last meal</TAG>
+          <DESCRIPTION>content of last meal and time since feeding; can include multiple
+                        values</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>family relationship</TAG>
+          <DESCRIPTION>relationships to other hosts in the same study; can include
+                        multiple relationships</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>genotype</TAG>
+          <DESCRIPTION>observed genotype</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>smoker</TAG>
+          <DESCRIPTION>specification of smoking status</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_CHOICE>
+              <VALUE>smoker</VALUE>
+              <VALUE>non-smoker</VALUE>
+              <VALUE>ex-smoker</VALUE>
+            </TEXT_CHOICE>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>major diet change in last six months</TAG>
+          <DESCRIPTION>specification of major diet changes in the last six months, if
+                        yes the change should be specified</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>weight loss in last three months</TAG>
+          <DESCRIPTION>specification of weight loss in the last three months, if yes
+                        should be further specified to include amount of weight loss</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>travel outside the country in last six months</TAG>
+          <DESCRIPTION>specification of the countries travelled in the last six months;
+                        can include multiple travels</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>twin sibling presence</TAG>
+          <DESCRIPTION>specification of twin sibling presence</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>pulse</TAG>
+          <DESCRIPTION>resting pulse, measured as beats per minute</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <REGEXP_VALUE>[+-]?[0-9]+</REGEXP_VALUE>
+          </VALUE>
+          <UNITS>
+            <UNIT>bpm</UNIT>
+          </UNITS>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>amniotic fluid/gestation state</TAG>
+          <DESCRIPTION>specification of the gestation state</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>amniotic fluid/maternal health status</TAG>
+          <DESCRIPTION>specification of the maternal health status</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>amniotic fluid/foetal health status</TAG>
+          <DESCRIPTION>specification of foetal health status, should also include
+                        abortion</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>amniotic fluid/color</TAG>
+          <DESCRIPTION>specification of the color of the amniotic fluid
+                        sample</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+      </CHECKLIST_GROUP>
+      <CHECKLIST_GROUP>
+        <GROUP>other</GROUP>
+        <DESCRIPTION/>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>miscellaneous parameter</TAG>
+          <DESCRIPTION>any other measurement performed or parameter collected, that is
+                        not listed here</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+      </CHECKLIST_GROUP>
+      <CHECKLIST_GROUP>
+        <GROUP>local environment conditions</GROUP>
+        <DESCRIPTION/>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>presence of pets or farm animals</TAG>
+          <DESCRIPTION>specification of presence of pets or farm animals in the
+                        environment of subject, if yes the animals should be specified; can
+                        include multiple animals present</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>temperature</TAG>
+          <DESCRIPTION>temperature of the sample at time of sampling</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <REGEXP_VALUE>[+-]?(0|((0\.)|([1-9][0-9]*\.?))[0-9]*)([Ee][+-]?[0-9]+)?</REGEXP_VALUE>
+          </VALUE>
+          <UNITS>
+            <UNIT>?C</UNIT>
+          </UNITS>
+        </CHECKLIST_ATTRIBUTE>
+      </CHECKLIST_GROUP>
+      <CHECKLIST_GROUP>
+        <GROUP>host disorder</GROUP>
+        <DESCRIPTION/>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>disease status</TAG>
+          <DESCRIPTION>list of diseases with which the host has been diagnosed; can
+                        include multiple diagnoses. the value of the field depends on host; for
+                        humans the terms should be chosen from DO (Disease Ontology), other hosts
+                        are free text. For DO terms, please see
+                        http://gemina.svn.sourceforge.net/viewvc/gemina/trunk/Gemina/ontologies/gemina_symptom.obo?view=log</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>HIV status</TAG>
+          <DESCRIPTION>HIV status of subject, if yes HAART initiation status should also
+                        be indicated as [YES or NO]</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_CHOICE>
+              <VALUE>Yes</VALUE>
+              <VALUE>No</VALUE>
+            </TEXT_CHOICE>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>lung/pulmonary disorder</TAG>
+          <DESCRIPTION>history of pulmonary disorders; can include multiple
+                        disorders</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>lung/nose-throat disorder</TAG>
+          <DESCRIPTION>history of nose-throat disorders; can include multiple
+                        disorders</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>blood/blood disorder</TAG>
+          <DESCRIPTION>history of blood disorders; can include multiple
+                        disorders</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>urine/kidney disorder</TAG>
+          <DESCRIPTION>history of kidney disorders; can include multiple
+                        disorders</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>urine/urogenital tract disorder</TAG>
+          <DESCRIPTION>history of urogenitaltract disorders; can include multiple
+                        disorders</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+      </CHECKLIST_GROUP>
+      <CHECKLIST_GROUP>
+        <GROUP>Geography</GROUP>
+        <DESCRIPTION/>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>environmental package</TAG>
+          <DESCRIPTION>MIGS/MIMS/MIMARKS extension for reporting of measurements and
+                        observations obtained from one or more of the environments where the
+                        sample was obtained. All environmental packages listed here are further
+                        defined in separate subtables. By giving the name of the environmental
+                        package, a selection of fields can be made from the subtables and can be
+                        reported</DESCRIPTION>
+          <MANDATORY>mandatory</MANDATORY>
+          <VALUE>
+            <TEXT_CHOICE>
+              <VALUE>human-associated</VALUE>
+            </TEXT_CHOICE>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>geographic location (latitude)</TAG>
+          <DESCRIPTION>The geographical origin of the sample as defined by latitude and
+                        longitude. The values should be reported in decimal degrees and in WGS84
+                        system</DESCRIPTION>
+          <MANDATORY>mandatory</MANDATORY>
+          <VALUE>
+            <REGEXP_VALUE>[+-]?[0-9]+.?[0-9]*</REGEXP_VALUE>
+          </VALUE>
+          <UNITS>
+            <UNIT>DD</UNIT>
+          </UNITS>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>geographic location (longitude)</TAG>
+          <DESCRIPTION>The geographical origin of the sample as defined by latitude and
+                        longitude. The values should be reported in decimal degrees and in WGS84
+                        system</DESCRIPTION>
+          <MANDATORY>mandatory</MANDATORY>
+          <VALUE>
+            <REGEXP_VALUE>[+-]?[0-9]+.?[0-9]*</REGEXP_VALUE>
+          </VALUE>
+          <UNITS>
+            <UNIT>DD</UNIT>
+          </UNITS>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>geographic location (country and/or sea,region)</TAG>
+          <DESCRIPTION>The geographical origin of the sample as defined by the country
+                        or sea name followed by specific region name. Country or sea names should
+                        be chosen from the INSDC country list (http://insdc.org/country.html), or
+                        the GAZ ontology (v1.446)
+                        (http://bioportal.bioontology.org/visualize/40651)</DESCRIPTION>
+          <MANDATORY>mandatory</MANDATORY>
+          <VALUE>
+            <TEXT_CHOICE>
+              <VALUE>Afghanistan</VALUE>
+              <VALUE>Albania</VALUE>
+              <VALUE>Algeria</VALUE>
+              <VALUE>American Samoa</VALUE>
+              <VALUE>Andorra</VALUE>
+              <VALUE>Angola</VALUE>
+              <VALUE>Anguilla</VALUE>
+              <VALUE>Antarctica</VALUE>
+              <VALUE>Antigua and Barbuda</VALUE>
+              <VALUE>Arctic Ocean</VALUE>
+              <VALUE>Argentina</VALUE>
+              <VALUE>Armenia</VALUE>
+              <VALUE>Aruba</VALUE>
+              <VALUE>Ashmore and Cartier Islands</VALUE>
+              <VALUE>Atlantic Ocean</VALUE>
+              <VALUE>Australia</VALUE>
+              <VALUE>Austria</VALUE>
+              <VALUE>Azerbaijan</VALUE>
+              <VALUE>Bahamas</VALUE>
+              <VALUE>Bahrain</VALUE>
+              <VALUE>Baltic Sea</VALUE>
+              <VALUE>Baker Island</VALUE>
+              <VALUE>Bangladesh</VALUE>
+              <VALUE>Barbados</VALUE>
+              <VALUE>Bassas da India</VALUE>
+              <VALUE>Belarus</VALUE>
+              <VALUE>Belgium</VALUE>
+              <VALUE>Belize</VALUE>
+              <VALUE>Benin</VALUE>
+              <VALUE>Bermuda</VALUE>
+              <VALUE>Bhutan</VALUE>
+              <VALUE>Bolivia</VALUE>
+              <VALUE>Borneo</VALUE>
+              <VALUE>Bosnia and Herzegovina</VALUE>
+              <VALUE>Botswana</VALUE>
+              <VALUE>Bouvet Island</VALUE>
+              <VALUE>Brazil</VALUE>
+              <VALUE>British Virgin Islands</VALUE>
+              <VALUE>Brunei</VALUE>
+              <VALUE>Bulgaria</VALUE>
+              <VALUE>Burkina Faso</VALUE>
+              <VALUE>Burundi</VALUE>
+              <VALUE>Cambodia</VALUE>
+              <VALUE>Cameroon</VALUE>
+              <VALUE>Canada</VALUE>
+              <VALUE>Cape Verde</VALUE>
+              <VALUE>Cayman Islands</VALUE>
+              <VALUE>Central African Republic</VALUE>
+              <VALUE>Chad</VALUE>
+              <VALUE>Chile</VALUE>
+              <VALUE>China</VALUE>
+              <VALUE>Christmas Island</VALUE>
+              <VALUE>Clipperton Island</VALUE>
+              <VALUE>Cocos Islands</VALUE>
+              <VALUE>Colombia</VALUE>
+              <VALUE>Comoros</VALUE>
+              <VALUE>Cook Islands</VALUE>
+              <VALUE>Coral Sea Islands</VALUE>
+              <VALUE>Costa Rica</VALUE>
+              <VALUE>Cote d&apos;Ivoire</VALUE>
+              <VALUE>Croatia</VALUE>
+              <VALUE>Cuba</VALUE>
+              <VALUE>Curacao</VALUE>
+              <VALUE>Cyprus</VALUE>
+              <VALUE>Czech Republic</VALUE>
+              <VALUE>Democratic Republic of the Congo</VALUE>
+              <VALUE>Denmark</VALUE>
+              <VALUE>Djibouti</VALUE>
+              <VALUE>Dominica</VALUE>
+              <VALUE>Dominican Republic</VALUE>
+              <VALUE>East Timor</VALUE>
+              <VALUE>Ecuador</VALUE>
+              <VALUE>Egypt</VALUE>
+              <VALUE>El Salvador</VALUE>
+              <VALUE>Equatorial Guinea</VALUE>
+              <VALUE>Eritrea</VALUE>
+              <VALUE>Estonia</VALUE>
+              <VALUE>Ethiopia</VALUE>
+              <VALUE>Europa Island</VALUE>
+              <VALUE>Falkland Islands (Islas Malvinas)</VALUE>
+              <VALUE>Faroe Islands</VALUE>
+              <VALUE>Fiji</VALUE>
+              <VALUE>Finland</VALUE>
+              <VALUE>France</VALUE>
+              <VALUE>French Guiana</VALUE>
+              <VALUE>French Polynesia</VALUE>
+              <VALUE>French Southern and Antarctic Lands</VALUE>
+              <VALUE>Gabon</VALUE>
+              <VALUE>Gambia</VALUE>
+              <VALUE>Gaza Strip</VALUE>
+              <VALUE>Georgia</VALUE>
+              <VALUE>Germany</VALUE>
+              <VALUE>Ghana</VALUE>
+              <VALUE>Gibraltar</VALUE>
+              <VALUE>Glorioso Islands</VALUE>
+              <VALUE>Greece</VALUE>
+              <VALUE>Greenland</VALUE>
+              <VALUE>Grenada</VALUE>
+              <VALUE>Guadeloupe</VALUE>
+              <VALUE>Guam</VALUE>
+              <VALUE>Guatemala</VALUE>
+              <VALUE>Guernsey</VALUE>
+              <VALUE>Guinea</VALUE>
+              <VALUE>Guinea-Bissau</VALUE>
+              <VALUE>Guyana</VALUE>
+              <VALUE>Haiti</VALUE>
+              <VALUE>Heard Island and McDonald Islands</VALUE>
+              <VALUE>Honduras</VALUE>
+              <VALUE>Hong Kong</VALUE>
+              <VALUE>Howland Island</VALUE>
+              <VALUE>Hungary</VALUE>
+              <VALUE>Iceland</VALUE>
+              <VALUE>India</VALUE>
+              <VALUE>Indian Ocean</VALUE>
+              <VALUE>Indonesia</VALUE>
+              <VALUE>Iran</VALUE>
+              <VALUE>Iraq</VALUE>
+              <VALUE>Ireland</VALUE>
+              <VALUE>Isle of Man</VALUE>
+              <VALUE>Israel</VALUE>
+              <VALUE>Italy</VALUE>
+              <VALUE>Jamaica</VALUE>
+              <VALUE>Jan Mayen</VALUE>
+              <VALUE>Japan</VALUE>
+              <VALUE>Jarvis Island</VALUE>
+              <VALUE>Jersey</VALUE>
+              <VALUE>Johnston Atoll</VALUE>
+              <VALUE>Jordan</VALUE>
+              <VALUE>Juan de Nova Island</VALUE>
+              <VALUE>Kazakhstan</VALUE>
+              <VALUE>Kenya</VALUE>
+              <VALUE>Kerguelen Archipelago</VALUE>
+              <VALUE>Kingman Reef</VALUE>
+              <VALUE>Kiribati</VALUE>
+              <VALUE>Kosovo</VALUE>
+              <VALUE>Kuwait</VALUE>
+              <VALUE>Kyrgyzstan</VALUE>
+              <VALUE>Laos</VALUE>
+              <VALUE>Latvia</VALUE>
+              <VALUE>Lebanon</VALUE>
+              <VALUE>Lesotho</VALUE>
+              <VALUE>Liberia</VALUE>
+              <VALUE>Libya</VALUE>
+              <VALUE>Liechtenstein</VALUE>
+              <VALUE>Lithuania</VALUE>
+              <VALUE>Luxembourg</VALUE>
+              <VALUE>Macau</VALUE>
+              <VALUE>Macedonia</VALUE>
+              <VALUE>Madagascar</VALUE>
+              <VALUE>Malawi</VALUE>
+              <VALUE>Malaysia</VALUE>
+              <VALUE>Maldives</VALUE>
+              <VALUE>Mali</VALUE>
+              <VALUE>Malta</VALUE>
+              <VALUE>Marshall Islands</VALUE>
+              <VALUE>Martinique</VALUE>
+              <VALUE>Mauritania</VALUE>
+              <VALUE>Mauritius</VALUE>
+              <VALUE>Mayotte</VALUE>
+              <VALUE>Mediterranean Sea</VALUE>
+              <VALUE>Mexico</VALUE>
+              <VALUE>Micronesia</VALUE>
+              <VALUE>Midway Islands</VALUE>
+              <VALUE>Moldova</VALUE>
+              <VALUE>Monaco</VALUE>
+              <VALUE>Mongolia</VALUE>
+              <VALUE>Montenegro</VALUE>
+              <VALUE>Montserrat</VALUE>
+              <VALUE>Morocco</VALUE>
+              <VALUE>Mozambique</VALUE>
+              <VALUE>Myanmar</VALUE>
+              <VALUE>Namibia</VALUE>
+              <VALUE>Nauru</VALUE>
+              <VALUE>Navassa Island</VALUE>
+              <VALUE>Nepal</VALUE>
+              <VALUE>Netherlands</VALUE>
+              <VALUE>New Caledonia</VALUE>
+              <VALUE>New Zealand</VALUE>
+              <VALUE>Nicaragua</VALUE>
+              <VALUE>Niger</VALUE>
+              <VALUE>Nigeria</VALUE>
+              <VALUE>Niue</VALUE>
+              <VALUE>Norfolk Island</VALUE>
+              <VALUE>North Korea</VALUE>
+              <VALUE>North Sea</VALUE>
+              <VALUE>Northern Mariana Islands</VALUE>
+              <VALUE>Norway</VALUE>
+              <VALUE>Oman</VALUE>
+              <VALUE>Pacific Ocean</VALUE>
+              <VALUE>Pakistan</VALUE>
+              <VALUE>Palau</VALUE>
+              <VALUE>Palmyra Atoll</VALUE>
+              <VALUE>Panama</VALUE>
+              <VALUE>Papua New Guinea</VALUE>
+              <VALUE>Paracel Islands</VALUE>
+              <VALUE>Paraguay</VALUE>
+              <VALUE>Peru</VALUE>
+              <VALUE>Philippines</VALUE>
+              <VALUE>Pitcairn Islands</VALUE>
+              <VALUE>Poland</VALUE>
+              <VALUE>Portugal</VALUE>
+              <VALUE>Puerto Rico</VALUE>
+              <VALUE>Qatar</VALUE>
+              <VALUE>Republic of the Congo</VALUE>
+              <VALUE>Reunion</VALUE>
+              <VALUE>Romania</VALUE>
+              <VALUE>Ross Sea</VALUE>
+              <VALUE>Russia</VALUE>
+              <VALUE>Rwanda</VALUE>
+              <VALUE>Saint Helena</VALUE>
+              <VALUE>Saint Kitts and Nevis</VALUE>
+              <VALUE>Saint Lucia</VALUE>
+              <VALUE>Saint Pierre and Miquelon</VALUE>
+              <VALUE>Saint Vincent and the Grenadines</VALUE>
+              <VALUE>Samoa</VALUE>
+              <VALUE>San Marino</VALUE>
+              <VALUE>Sao Tome and Principe</VALUE>
+              <VALUE>Saudi Arabia</VALUE>
+              <VALUE>Senegal</VALUE>
+              <VALUE>Serbia</VALUE>
+              <VALUE>Seychelles</VALUE>
+              <VALUE>Sierra Leone</VALUE>
+              <VALUE>Singapore</VALUE>
+              <VALUE>Sint Maarten</VALUE>
+              <VALUE>Slovakia</VALUE>
+              <VALUE>Slovenia</VALUE>
+              <VALUE>Solomon Islands</VALUE>
+              <VALUE>Somalia</VALUE>
+              <VALUE>South Africa</VALUE>
+              <VALUE>South Georgia and the South Sandwich Islands</VALUE>
+              <VALUE>South Korea</VALUE>
+              <VALUE>Southern Ocean</VALUE>
+              <VALUE>Spain</VALUE>
+              <VALUE>Spratly Islands</VALUE>
+              <VALUE>Sri Lanka</VALUE>
+              <VALUE>Sudan</VALUE>
+              <VALUE>Suriname</VALUE>
+              <VALUE>Svalbard</VALUE>
+              <VALUE>Swaziland</VALUE>
+              <VALUE>Sweden</VALUE>
+              <VALUE>Switzerland</VALUE>
+              <VALUE>Syria</VALUE>
+              <VALUE>Taiwan</VALUE>
+              <VALUE>Tajikistan</VALUE>
+              <VALUE>Tanzania</VALUE>
+              <VALUE>Tasman Sea</VALUE>
+              <VALUE>Thailand</VALUE>
+              <VALUE>Togo</VALUE>
+              <VALUE>Tokelau</VALUE>
+              <VALUE>Tonga</VALUE>
+              <VALUE>Trinidad and Tobago</VALUE>
+              <VALUE>Tromelin Island</VALUE>
+              <VALUE>Tunisia</VALUE>
+              <VALUE>Turkey</VALUE>
+              <VALUE>Turkmenistan</VALUE>
+              <VALUE>Turks and Caicos Islands</VALUE>
+              <VALUE>Tuvalu</VALUE>
+              <VALUE>USA</VALUE>
+              <VALUE>Uganda</VALUE>
+              <VALUE>Ukraine</VALUE>
+              <VALUE>United Arab Emirates</VALUE>
+              <VALUE>United Kingdom</VALUE>
+              <VALUE>Uruguay</VALUE>
+              <VALUE>Uzbekistan</VALUE>
+              <VALUE>Vanuatu</VALUE>
+              <VALUE>Venezuela</VALUE>
+              <VALUE>Viet Nam</VALUE>
+              <VALUE>Virgin Islands</VALUE>
+              <VALUE>Wake Island</VALUE>
+              <VALUE>Wallis and Futuna</VALUE>
+              <VALUE>West Bank</VALUE>
+              <VALUE>Western Sahara</VALUE>
+              <VALUE>Yemen</VALUE>
+              <VALUE>Zambia</VALUE>
+              <VALUE>Zimbabwe</VALUE>
+            </TEXT_CHOICE>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>environment (biome)</TAG>
+          <DESCRIPTION>In environmental biome level are the major classes of
+                        ecologically similar communities of plants, animals, and other organisms.
+                        Biomes are defined based on factors such as plant structures, leaf types,
+                        plant spacing, and other factors like climate. Examples include: desert,
+                        taiga, deciduous woodland, or coral reef. EnvO (v1.53) terms listed under
+                        environmental biome can be found from the link:
+                        http://bioportal.bioontology.org/visualize/44405/?conceptid=ENVO%3A00000428</DESCRIPTION>
+          <MANDATORY>mandatory</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>environment (feature)</TAG>
+          <DESCRIPTION>Environmental feature level includes geographic environmental
+                        features. Examples include: harbor, cliff, or lake. EnvO (v1.53) terms
+                        listed under environmental feature can be found from the link:
+                        http://bioportal.bioontology.org/visualize/44405/?conceptid=ENVO%3A00002297</DESCRIPTION>
+          <MANDATORY>mandatory</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>environment (material)</TAG>
+          <DESCRIPTION>The environmental material level refers to the matter that was
+                        displaced by the sample, prior to the sampling event. Environmental matter
+                        terms are generally mass nouns. Examples include: air, soil, or water.
+                        EnvO (v1.53) terms listed under environmental matter can be found from the
+                        link:
+                        http://bioportal.bioontology.org/visualize/44405/?conceptid=ENVO%3A00010483</DESCRIPTION>
+          <MANDATORY>mandatory</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+      </CHECKLIST_GROUP>
+    </DESCRIPTOR>
+  </CHECKLIST>
+</CHECKLIST_SET>
+

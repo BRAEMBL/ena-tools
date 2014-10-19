@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CHECKLIST_SET>
+  <CHECKLIST alias="ENA default sample checklist" center_name="EBI" accession="ERC000011">
+    <DESCRIPTOR>
+      <CHECKLIST_AUTHORITY>ENA</CHECKLIST_AUTHORITY>
+      <CHECKLIST_NAME>ENA default sample checklist</CHECKLIST_NAME>
+      <CHECKLIST_DESCRIPTION>Minimum information required for the
+                sample</CHECKLIST_DESCRIPTION>
+      <CHECKLIST_VERSION>1</CHECKLIST_VERSION>
+      <CHECKLIST_GROUP>
+        <GROUP>Pointer to physical material</GROUP>
+        <DESCRIPTION>References to sample or sample source material in physical
+                    resources</DESCRIPTION>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>bio_material</TAG>
+          <DESCRIPTION>identifier for the biological material from which the sample was
+                        obtained, with optional institution code and collection code for the place
+                        where it is currently stored.</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>culture_collection</TAG>
+          <DESCRIPTION>institution code and identifier for the culture from which the
+                        sample was obtained, with optional collection code.</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>specimen_voucher</TAG>
+          <DESCRIPTION>identifier for the specimen from which the sample was
+                        obtained</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+      </CHECKLIST_GROUP>
+      <CHECKLIST_GROUP>
+        <GROUP>Collection event information</GROUP>
+        <DESCRIPTION/>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>collected_by</TAG>
+          <DESCRIPTION>name of the person who collected the specimen</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>collection_date</TAG>
+          <DESCRIPTION>date that the specimen was collected</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>country</TAG>
+          <DESCRIPTION>locality of isolation of the sampled organism indicated in terms
+                        of political names for nations, oceans or seas, followed by regions and
+                        localities</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>host</TAG>
+          <DESCRIPTION>natural (as opposed to laboratory) host to the organism from
+                        which sample was obtained</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>identified_by</TAG>
+          <DESCRIPTION>name of the taxonomist who identified the specimen</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>isolation_source</TAG>
+          <DESCRIPTION>describes the physical, environmental and/or local geographical
+                        source of the biological sample from which the sample was
+                        derived</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>lat_lon</TAG>
+          <DESCRIPTION>geographical coordinates of the location where the specimen was
+                        collected</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>lab_host</TAG>
+          <DESCRIPTION>scientific name of the laboratory host used to propagate the
+                        source organism from which the sample was obtained</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>environmental_sample</TAG>
+          <DESCRIPTION>identifies records derived by direct molecular isolation from a
+                        bulk environmental DNA sample (by PCR with or without subsequent cloning
+                        of the product, DGGE, or other anonymous methods) with no reliable
+                        identification of the source organism. Environmental samples include
+                        clinical samples, gut contents, and others from anonymous organisms that
+                        may be associated with a particular host. They do not include
+                        endosymbionts that can be reliably recovered from a particular host,
+                        organisms from a readily identifiable but uncultured field sample (e.g.,
+                        many cyanobacteria), or phytoplasmas that can be reliably recovered from
+                        diseased plants (even though these cannot be grown in axenic
+                        culture).</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+      </CHECKLIST_GROUP>
+      <CHECKLIST_GROUP>
+        <GROUP>Organism characteristics</GROUP>
+        <DESCRIPTION>Characteristics of the source organism</DESCRIPTION>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>mating_type</TAG>
+          <DESCRIPTION/>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>sex</TAG>
+          <DESCRIPTION>sex of the organism from which the sample was obtained; sex is
+                        used for eukaryotic organisms that undergo meiosis and have sexually
+                        dimorphic gametes</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+      </CHECKLIST_GROUP>
+      <CHECKLIST_GROUP>
+        <GROUP>Part and developmental stage of organism</GROUP>
+        <DESCRIPTION>Anatomical and developmental descriptions of the sample site or
+                    source material</DESCRIPTION>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>cell_type</TAG>
+          <DESCRIPTION>cell type from which the sample was obtained</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>dev_stage</TAG>
+          <DESCRIPTION>if the sample was obtained from an organism in a specific
+                        developmental stage, it is specified with this qualifier</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>germline</TAG>
+          <DESCRIPTION>the sample described presented in the entry has not undergone
+                        somatic genomic rearrangement as part of an adaptive immune response; it
+                        is the unrearranged molecule that was inherited from the parental
+                        germline</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>tissue_lib</TAG>
+          <DESCRIPTION>tissue library from which sample was obtained</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>tissue_type</TAG>
+          <DESCRIPTION>tissue type from which the sample was obtained</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+      </CHECKLIST_GROUP>
+      <CHECKLIST_GROUP>
+        <GROUP>Infraspecies information</GROUP>
+        <DESCRIPTION>Formal and informal infraspecies taxonomic information</DESCRIPTION>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>cultivar</TAG>
+          <DESCRIPTION>cultivar (cultivated variety) of plant from which sample was
+                        obtained</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>ecotype</TAG>
+          <DESCRIPTION>a population within a given species displaying genetically based,
+                        phenotypic traits that reflect adaptation to a local
+                        habitat.</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>isolate</TAG>
+          <DESCRIPTION>individual isolate from which the sample was
+                        obtained</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>strain</TAG>
+          <DESCRIPTION>strain from which sample was obtained</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>sub_species</TAG>
+          <DESCRIPTION>name of sub-species of organism from which sample was
+                        obtained</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>variety</TAG>
+          <DESCRIPTION>variety (= varietas, a formal Linnaean rank) of organism from
+                        which sample was derived.</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>sub_strain</TAG>
+          <DESCRIPTION>name or identifier of a genetically or otherwise modified strain
+                        from which sample was obtained, derived from a parental strain (which
+                        should be annotated in the strain field; sub_strain from which sample was
+                        obtained</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>cell_line</TAG>
+          <DESCRIPTION>cell line from which the sample was obtained</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>serotype</TAG>
+          <DESCRIPTION>serological variety of a species characterized by its antigenic
+                        properties</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+        <CHECKLIST_ATTRIBUTE>
+          <TAG>serovar</TAG>
+          <DESCRIPTION>serological variety of a species (usually a prokaryote)
+                        characterized by its antigenic properties</DESCRIPTION>
+          <MANDATORY>optional</MANDATORY>
+          <VALUE>
+            <TEXT_VALUE/>
+          </VALUE>
+        </CHECKLIST_ATTRIBUTE>
+      </CHECKLIST_GROUP>
+    </DESCRIPTOR>
+  </CHECKLIST>
+</CHECKLIST_SET>
+
