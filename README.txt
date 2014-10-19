@@ -11,20 +11,11 @@ SOFTWARE.
 
 - Checking out the script
 
--- Requirements:
+Clone the git repository like this:
 
-  - You have to be able to ssh into barrine,
-  - your user account has to be in the ebi-Mirror group.
+git clone https://github.com/BRAEMBL/ena-tools.git
 
-Set this to your uquser e.g.:
-
-uquser=uqmnuhn
-
-Then clone the git repository like this:
-
-git clone ${uquser}@barrine.hpcu.uq.edu.au:/HPC/home/uqmnuhn/git/ena_submission
-
-This will create a new directory "ena_submission":
+This will create a new directory "ena-tools":
 
 cd ena_submission/
 
