@@ -1,4 +1,4 @@
-package BRAEMBL::ENA::Submission::Rest::CoralGenome::DomainObjectBuilder::StudyBuilder;
+package BRAEMBL::ENA::Submission::Rest::DefaultStudyType1::DomainObjectBuilder::StudyBuilder;
 
 use Moose;
 

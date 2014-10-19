@@ -1,4 +1,4 @@
-package BRAEMBL::ENA::Submission::Rest::CoralGenome::DomainObjectBuilder::RunBuilder;
+package BRAEMBL::ENA::Submission::Rest::DefaultStudyType1::DomainObjectBuilder::RunBuilder;
 
 use Moose;
 use BRAEMBL::ENA::Rest::Run;

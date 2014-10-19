@@ -1,4 +1,4 @@
-package BRAEMBL::ENA::Submission::Rest::CoralGenome::DomainObjectBuilder::ExperimentBuilder;
+package BRAEMBL::ENA::Submission::Rest::DefaultStudyType1::DomainObjectBuilder::ExperimentBuilder;
 
 use Moose;
 use BRAEMBL::DefaultLogger;

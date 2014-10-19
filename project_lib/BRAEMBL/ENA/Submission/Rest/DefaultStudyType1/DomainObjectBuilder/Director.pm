@@ -1,4 +1,4 @@
-package BRAEMBL::ENA::Submission::Rest::CoralGenome::DomainObjectBuilder::Director;
+package BRAEMBL::ENA::Submission::Rest::DefaultStudyType1::DomainObjectBuilder::Director;
 
 use Moose;
 use Data::Dumper;
