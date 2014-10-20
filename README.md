@@ -1,3 +1,7 @@
+Description
+===========
+
+
 
 Checking out the script
 =======================
@@ -57,7 +61,7 @@ Running the script
 Setup environment
 -----------------
 
-If you have cd'ed into the directory with `cd ena_submission/` after checking out, you can set you `PERL5LIB` like this:
+If you have cd'ed into the directory with `cd ena-tools/` after checking out, you can set you `PERL5LIB` like this:
 
 ```
 export PERL5LIB=$PWD/lib
@@ -90,12 +94,13 @@ For testing purposes, you can run the script with one of the demo files provided
 
 ```bash
 time color perl scripts/serialise_study.pl -no_md5 -config_file metadata/demo.bacterial_submission.cfg -authenticated_url $authenticated_url
-time color perl scripts/serialise_study.pl -no_md5 -config_file metadata/demo.spider_toxin.cfg -authenticated_url $authenticated_url
+time color perl scripts/serialise_study.pl -no_md5 -config_file metadata/demo.default_study_type_1.cfg -authenticated_url $authenticated_url
+time color perl scripts/serialise_study.pl -no_md5 -config_file metadata/demo.default_study_type_1.cfg -authenticated_url $authenticated_url
 ```
 
 The files referenced in the configuration files don't actually exist, so generation of md5 sums is turned off (`-no_md5` option).
   
-If you followed the steps successfully, ENA's REST service will send you a receipt and if you used one of the commands the script suggested, the receipt will be in last_receipt.${study_name}.xml. Where study_name is the name of your configuration file without the suffix ".cfg".
+If you followed the steps successfully, ENA's REST service will send you a receipt and if you used one of the commands the script suggested, the receipt will be in `last_receipt.${study_name}.xml`. Where `study_name` is the name of your configuration file without the suffix ".cfg".
 
 The script will also have generated a report summarising the metadata you have submitted in html and tab separated format.
   
@@ -108,7 +113,7 @@ For simplicity, set
 study_name=<Name of your configuration file without the suffix ".cfg">
 ```
 
-If you are using the default settings, you should have the following files (Test, by copy and pasting the block belor):
+If you are using the default settings, you should have the following files (Test, by copy and pasting the block below):
 
 ```bash
 #
@@ -148,8 +153,6 @@ Disclaimer
 ==========
 
 ```
-Copyright (c) 2014 BRAEMBL
-
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
 MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, SUPPORT AND
@@ -159,3 +162,5 @@ ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
+
+Copyright (c) 2014 BRAEMBL
