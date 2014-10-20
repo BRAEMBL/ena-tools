@@ -23,6 +23,8 @@ xsi:noNamespaceSchemaLocation="ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/SRA.subm
     <SUBMISSION_ATTRIBUTE>
     <TAG>SUBMISSION_TOOL</TAG>
     <VALUE>braembl-ena-tools</VALUE>
+</SUBMISSION_ATTRIBUTE>
+<SUBMISSION_ATTRIBUTE>
     <TAG>SUBMISSION_TOOL-VERSION</TAG>
     <VALUE>0.01</VALUE>
 </SUBMISSION_ATTRIBUTE>
