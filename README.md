@@ -1,7 +1,67 @@
 Description
 ===========
 
+This repository has scripts for helping users generate XML files with metadata about their genomic sequences that they want to submit to the European Nucleotide Archive (ENA). 
 
+Users can choose one of the sample configuration files in the metadata directory that is of a similar type as their own study, e.g. `metadata/demo.default_study_type_1.cfg`.
+
+Then they make a copy and change the values in it to those of their own study. The script is run with this configuration file like this:
+
+```bash
+time color perl scripts/serialise_study.pl -config_file metadata/demo.default_study_type_1.cfg -authenticated_url https://www.ebi.ac.uk/ena/submit/drop-box/submit/?auth=secretauthenticationstringhere
+```
+
+If all goes well, you will see an output like this:
+
+```bash
+2014/10/20 15:47:07 INFO> SampleBuilder.remove_units::140 - Using checklist ERC000011
+2014/10/20 15:47:07 FATAL> SampleBuilder.remove_units::149 - Using checklist checklists/ERC000011.xml for processing attributes of sample 1
+2014/10/20 15:47:07 INFO> Serialiser.serialise_study::51 - Creating submission files for: Genome of an organism
+2014/10/20 15:47:07 INFO> Serialiser.serialise_study::52 - Results will be written to scripts/../auto_submission/demo.default_study_type_1
+To see a summary of the metadata in tab separated format, run:
+
+gedit scripts/../auto_submission/demo.default_study_type_1/tabsep/all_metadata.txt
+
+To validate, add or modify your data via ENA's REST service you can run one of the following commands:
+
+  - For the VALIDATE action, run this:
+
+curl -F "SUBMISSION=@scripts/../auto_submission/demo.default_study_type_1/sra_xml/submission_VALIDATE.xml" -F "STUDY=@scripts/../auto_submission/demo.default_study_type_1/sra_xml/study.xml" -F"SAMPLE=@scripts/../auto_submission/demo.default_study_type_1/sra_xml/sample.xml" -F"EXPERIMENT=@scripts/../auto_submission/demo.default_study_type_1/sra_xml/experiment.xml" -F"RUN=@scripts/../auto_submission/demo.default_study_type_1/sra_xml/run.xml"  https://www.ebi.ac.uk/ena/submit/drop-box/submit/?auth=secretauthenticationstringhere | xmlstarlet fo | tee last_receipt.Genome_of_an_organism.xml 
+
+  - For the ADD action, run this:
+
+curl -F "SUBMISSION=@scripts/../auto_submission/demo.default_study_type_1/sra_xml/submission_ADD.xml" -F "STUDY=@scripts/../auto_submission/demo.default_study_type_1/sra_xml/study.xml" -F"SAMPLE=@scripts/../auto_submission/demo.default_study_type_1/sra_xml/sample.xml" -F"EXPERIMENT=@scripts/../auto_submission/demo.default_study_type_1/sra_xml/experiment.xml" -F"RUN=@scripts/../auto_submission/demo.default_study_type_1/sra_xml/run.xml"  https://www.ebi.ac.uk/ena/submit/drop-box/submit/?auth=secretauthenticationstringhere | xmlstarlet fo | tee last_receipt.Genome_of_an_organism.xml 
+
+  - If you want to MODIFY your submission, use the one for the object type you want to change:
+
+curl -F "SUBMISSION=@scripts/../auto_submission/demo.default_study_type_1/sra_xml/submission_MODIFY_experiment.xml" -F "EXPERIMENT=@scripts/../auto_submission/demo.default_study_type_1/sra_xml/experiment.xml" https://www.ebi.ac.uk/ena/submit/drop-box/submit/?auth=secretauthenticationstringhere | xmlstarlet fo | tee last_receipt.Genome_of_an_organism.xml 
+
+curl -F "SUBMISSION=@scripts/../auto_submission/demo.default_study_type_1/sra_xml/submission_MODIFY_run.xml" -F "RUN=@scripts/../auto_submission/demo.default_study_type_1/sra_xml/run.xml" https://www.ebi.ac.uk/ena/submit/drop-box/submit/?auth=secretauthenticationstringhere | xmlstarlet fo | tee last_receipt.Genome_of_an_organism.xml 
+
+curl -F "SUBMISSION=@scripts/../auto_submission/demo.default_study_type_1/sra_xml/submission_MODIFY_sample.xml" -F "SAMPLE=@scripts/../auto_submission/demo.default_study_type_1/sra_xml/sample.xml" https://www.ebi.ac.uk/ena/submit/drop-box/submit/?auth=secretauthenticationstringhere | xmlstarlet fo | tee last_receipt.Genome_of_an_organism.xml 
+
+curl -F "SUBMISSION=@scripts/../auto_submission/demo.default_study_type_1/sra_xml/submission_MODIFY_study.xml" -F "STUDY=@scripts/../auto_submission/demo.default_study_type_1/sra_xml/study.xml" https://www.ebi.ac.uk/ena/submit/drop-box/submit/?auth=secretauthenticationstringhere | xmlstarlet fo | tee last_receipt.Genome_of_an_organism.xml 
+
+Md5 sums were not computed for the files, so submission will fail. If you want md5 sums to be generated, don't set the -no_md5 option on the command line.
+To see a summary of the metadata as html, run:
+
+firefox scripts/../auto_submission/demo.default_study_type_1/html/all_metadata.html
+
+real	0m0.524s
+user	0m0.280s
+sys	0m0.108s
+```
+
+As the script suggests, you can open the preliminary receipt in firefox like this:
+
+```bash
+# Copy and pasted from script output
+firefox scripts/../auto_submission/demo.default_study_type_1/html/all_metadata.html
+```
+
+And check, if the metadata is correct. If all is well, you can run the VALIDATE action by copy and pasting the command the script has generated. This will send the xml files to ENA for validations, but it will not store any data. If validation was successfull, you can run the ADD action to store the data at ENA.
+
+Finally you can use the `scripts/insert_values_from_ENA.pl` script to insert the accessions returned from ENA into the receipt so you have documentation of your submission.
 
 Checking out the script
 =======================
@@ -73,7 +133,7 @@ I like setting this:
 color()(set -o pipefail;"$@" 2>&1>&3|sed $'s,.*,\e[31m&\e[m,'>&2)3>&1
 ```
 
-which will make anything written to STDERR appear in red on the console.
+which will make anything written to `STDERR` appear in red on the console.
 
 Script documentation
 --------------------
@@ -95,7 +155,7 @@ For testing purposes, you can run the script with one of the demo files provided
 ```bash
 time color perl scripts/serialise_study.pl -no_md5 -config_file metadata/demo.bacterial_submission.cfg -authenticated_url $authenticated_url
 time color perl scripts/serialise_study.pl -no_md5 -config_file metadata/demo.default_study_type_1.cfg -authenticated_url $authenticated_url
-time color perl scripts/serialise_study.pl -no_md5 -config_file metadata/demo.default_study_type_1.cfg -authenticated_url $authenticated_url
+time color perl scripts/serialise_study.pl -no_md5 -config_file metadata/demo.metagenomics_samples.cfg -authenticated_url $authenticated_url
 ```
 
 The files referenced in the configuration files don't actually exist, so generation of md5 sums is turned off (`-no_md5` option).
