@@ -15,7 +15,7 @@ If all goes well, you will see an output like this:
 
 ```bash
 2014/10/20 15:47:07 INFO> SampleBuilder.remove_units::140 - Using checklist ERC000011
-2014/10/20 15:47:07 FATAL> SampleBuilder.remove_units::149 - Using checklist checklists/ERC000011.xml for processing attributes of sample 1
+2014/10/20 15:47:07 INFO> SampleBuilder.remove_units::149 - Using checklist checklists/ERC000011.xml for processing attributes of sample 1
 2014/10/20 15:47:07 INFO> Serialiser.serialise_study::51 - Creating submission files for: Genome of an organism
 2014/10/20 15:47:07 INFO> Serialiser.serialise_study::52 - Results will be written to scripts/../auto_submission/demo.default_study_type_1
 To see a summary of the metadata in tab separated format, run:
