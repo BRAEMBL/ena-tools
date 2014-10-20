@@ -9,7 +9,8 @@ ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-- Checking out the script
+Checking out the script
+=======================
 
 Clone the git repository like this:
 
@@ -19,22 +20,24 @@ This will create a new directory "ena-tools":
 
 cd ena_submission/
 
-- Dependencies
+Dependencies
+============
 
--- Perl dependencies:
+Perl dependencies
+-----------------
 
 The script uses the following perl modules:
 
-  - Config::General
-  - Template
-  - String::Util
-  - File::Slurp
-  - Mouse
-  - Moose
-  - Moose::Util::TypeConstraints
-  - List::AllUtils
-  - Set::Scalar
-  - Log::Log4perl
+  * Config::General
+  * Template
+  * String::Util
+  * File::Slurp
+  * Mouse
+  * Moose
+  * Moose::Util::TypeConstraints
+  * List::AllUtils
+  * Set::Scalar
+  * Log::Log4perl
 
 You can install them by running
 
@@ -48,9 +51,11 @@ I also recommend installing xmlstarlet. On Ubuntu, you can install it like this:
 
 sudo apt-get install xmlstarlet
 
-- Running the script
+Running the script
+==================
 
--- Setup environment
+Setup environment
+-----------------
 
 If you have cd'ed into the directory with "cd ena_submission/" after checking out, you can set you PERL5LIB like this:
 
@@ -62,7 +67,8 @@ color()(set -o pipefail;"$@" 2>&1>&3|sed $'s,.*,\e[31m&\e[m,'>&2)3>&1
 
 which will make anything written to STDERR appear in red on the console.
 
--- Script documentation
+Script documentation
+--------------------
 
 The script has pod documentation, you can get it like this:
 
@@ -70,9 +76,9 @@ The script has pod documentation, you can get it like this:
 
 Which will show you how to 
 
-  - generate a configuration file, 
-  - use the script to generate xml files for submission to ENA and
-  - the commands to validate and submit the metadata.
+  * generate a configuration file, 
+  * use the script to generate xml files for submission to ENA and
+  * the commands to validate and submit the metadata.
 
 For testing purposes, you can run the script with one of the demo files provided:
 
@@ -85,7 +91,8 @@ If you followed the steps successfully, ENA's REST service will send you a recei
 
 The script will also have generated a report summarising the metadata you have submitted in html and tab separated format.
   
-After the submission:
+After the submission
+--------------------
 
 For simplicity, set
 
