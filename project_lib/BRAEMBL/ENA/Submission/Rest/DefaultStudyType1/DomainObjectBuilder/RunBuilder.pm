@@ -95,6 +95,14 @@ sub construct {
 	  );	  
       }
       
+      # Hack, this should be taken care of in the metadata object
+      $read_files{$current_read_file_id} = [ $read_files{$current_read_file_id} ]
+	unless(ref $read_files{$current_read_file_id} eq 'ARRAY');
+	
+      # Hack, this should be taken care of in the metadata object
+      $read_files_ftp{$current_read_file_id} = [ $read_files_ftp{$current_read_file_id} ]
+	unless(ref $read_files_ftp{$current_read_file_id} eq 'ARRAY');
+      
       my @file_list;
       for(my $file_index=0; $file_index<@{$read_files{$current_read_file_id}}; $file_index++) {
       
