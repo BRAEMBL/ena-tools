@@ -153,8 +153,11 @@ Which will show you how to
 For testing purposes, you can run the script with one of the demo files provided:
 
 ```bash
-time color perl scripts/serialise_study.pl -no_md5 -config_file metadata/demo.bacterial_submission.cfg -authenticated_url $authenticated_url
+
 time color perl scripts/serialise_study.pl -no_md5 -config_file metadata/demo.default_study_type_1.cfg -authenticated_url $authenticated_url
+
+time color perl scripts/serialise_study.pl -no_md5 -config_file metadata/demo.bacterial_submission.cfg -authenticated_url $authenticated_url
+
 time color perl scripts/serialise_study.pl -no_md5 -config_file metadata/demo.metagenomics_samples.cfg -authenticated_url $authenticated_url
 ```
 
