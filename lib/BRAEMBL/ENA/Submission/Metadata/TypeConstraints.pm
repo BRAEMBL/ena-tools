@@ -145,7 +145,7 @@ subtype 'platform_type',
   as 'platform_type_enum',
   message { "A platform_type must be one of: " . join ', ', @allowed_platforms };
 
-subtype 'references_by_id' => as 'ArrayRef[Int]';
+subtype 'references_by_id' => as 'ArrayRef[Str]';
 
 coerce 'references_by_id',
   from 'Str',
