@@ -208,11 +208,6 @@ SOFTWARE.
 my @allowed_format = qw( tabsep sra_xml html );
 my @format;
 
-# use BRAEMBL::ENA::Submission::Rest::MetagenomicsSamples::Metadata;
-# my $x = BRAEMBL::ENA::Submission::Rest::MetagenomicsSamples::Metadata->new();
-# use Data::Dumper; print Dumper($x);
-# exit;
-
 # Mapping of command line paramters to variables
 my %config_hash = (
     "no_md5"             => \$no_md5,
