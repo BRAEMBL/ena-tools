@@ -188,9 +188,6 @@ You can get prettier versions of this documentation by running one of these comm
 
 =back
 
-A standard operating procedure for BRAEMBL users is available here:
-L<https://www.ebi.edu.au:91/display/SRP/ENA+REST+Submission+script>
-
 =head2 Copyright (c) 2014 BRAEMBL
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
