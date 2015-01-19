@@ -4,9 +4,9 @@ use Moose;
 
 with 'BRAEMBL::ModuleLoader';
 
-has 'study_metadata_ref' => (
+has 'configuration_file' => (
   is       => 'ro', 
-  isa      => 'Str',
+  #isa      => 'Str|Maybe',
   required => 1,
 );
 
@@ -21,11 +21,21 @@ sub build_configuration_file_parsed {
 
     my $self = shift;
     
-    my $study_name = $self->study_metadata_ref;
+    my $configuration_file = $self->configuration_file;
 
+    # If no configuration file was specified, read from STDIN.
+    if (! $configuration_file) {
+      
+	use BRAEMBL::DefaultLogger;
+	my $logger = &get_logger;
+    
+	$logger->warn("No configuration file was specified, reading from STDIN.");
+	$configuration_file = \*STDIN;
+    }
+    
     use Config::General;
     my $config_general = Config::General->new(
-      -ConfigFile           => $study_name,
+      -ConfigFile           => $configuration_file,
       -IncludeRelative      => 1,
       -UseApacheInclude     => 1,
       
