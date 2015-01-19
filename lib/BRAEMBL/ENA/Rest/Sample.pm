@@ -75,7 +75,7 @@ has 'experiment' => (
 );
 
 subtype 'array_of_experiment_ids',
-    as 'ArrayRef[Int]';
+    as 'ArrayRef[Str]';
 
 coerce 'array_of_experiment_ids',
     from 'Str',
