@@ -20,6 +20,21 @@ my @allowed_instrument_model = (
   'Illumina HiScanSQ',
 
   'unspecified',
+  
+  'Ion Torrent PGM',
+  'Ion Torrent Proton',
+  
+  'Helicos HeliScope',
+  
+  'AB SOLiD System',
+  'AB SOLiD System 2.0',
+  'AB SOLiD System 3.0', 
+  'AB SOLiD 3 Plus System', 
+  'AB SOLiD 4 System', 
+  'AB SOLiD 4hq System', 
+  'AB SOLiD PI System', 
+  'AB 5500 Genetic Analyzer', 
+  'AB 5500xl Genetic Analyzer'
 );
 
 enum 'allowed_instrument_model_enum' => \@allowed_instrument_model;
@@ -51,8 +66,11 @@ my @allowed_library_selection = (
   'RACE',
   'MDA',
   'padlock probes capture method',
+  'Oligo-dT',
+  'Inverse rRNA selection',
   'other',
   'unspecified',
+  
 );
 
 enum 'allowed_library_selection_enum' => \@allowed_library_selection;
@@ -137,6 +155,12 @@ subtype 'library_layout_type',
 my @allowed_platforms = qw(
   ILLUMINA
   LS454
+  ION_TORRENT
+  HELICOS
+  ABI_SOLID
+  COMPLETE_GENOMICS
+  PACBIO_SMRT
+  CAPILLARY
 );
 
 enum 'platform_type_enum' => \@allowed_platforms;
@@ -145,7 +169,7 @@ subtype 'platform_type',
   as 'platform_type_enum',
   message { "A platform_type must be one of: " . join ', ', @allowed_platforms };
 
-subtype 'references_by_id' => as 'ArrayRef[Int]';
+subtype 'references_by_id' => as 'ArrayRef[Str]';
 
 coerce 'references_by_id',
   from 'Str',
