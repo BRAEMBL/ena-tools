@@ -38,7 +38,12 @@ Quote:
 
     https://wwwdev.ebi.ac.uk/ena/submit/drop-box/submit/?auth=ERA%20era-drop...
 
-    This URL can be used in curl to access and autheticate against the SRA REST service.
+    This URL can be used in curl to access and authenticate against the SRA REST service.
+    
+    Update: New accounts don't come with a drop box account anymore. See here 
+    how to generate an authenticated url for them:
+    
+    https://www.ebi.ac.uk/ena/submit/programmatic-submission
 
 =back
 
