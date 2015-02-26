@@ -26,7 +26,7 @@ sub create_alias {
   # are two samples with the same name in the same study.
   #
   if ($self->metadata->sample->{$sample_id}->{sample_alias}) {
-    $sample_identifier = $self->metadata->sample->{$sample_id}->{sample_alias};
+    return $self->metadata->sample->{$sample_id}->{sample_alias};
   }
   else {
     if ($self->metadata->scientific_name) {
@@ -64,7 +64,11 @@ sub construct_sample_by_id {
     $sample->alias          ( $self->create_alias($sample_id) );
     $sample->common_name    ( $self->metadata->sample->{$sample_id}->{common_name} );
     $sample->description    ( $self->metadata->sample->{$sample_id}->{description} );
-    $sample->title          ( $self->metadata->sample->{$sample_id}->{scientific_name} );
+    $sample->title          ( 
+      $self->metadata->sample->{$sample_id}->{title} ?
+      $self->metadata->sample->{$sample_id}->{title} :
+      $self->metadata->sample->{$sample_id}->{scientific_name}
+    );
     $sample->taxon_id       ( $self->metadata->sample->{$sample_id}->{taxon_id} );
     $sample->scientific_name( $self->metadata->sample->{$sample_id}->{scientific_name} );
     
