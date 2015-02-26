@@ -82,7 +82,10 @@ LINE: while (my $current_line = <STDIN>) {
   
   my @fields = split "\t", $current_line;
   
-  confess("Unexpected number of fields in $current_line!") unless(@fields==2);
+  unless(@fields==2) {
+    warn("Unexpected number of fields in $current_line!");
+    next LINE;
+  }
   
   my $placeholder = $fields[0];
   my $value       = $fields[1];
