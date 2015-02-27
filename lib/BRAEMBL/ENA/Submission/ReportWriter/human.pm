@@ -43,20 +43,23 @@ sub print_report_sra_xml {
     
     my $file_friendly_study_alias = $study_alias;
     $file_friendly_study_alias =~ tr/, /__/;
+    my $date = `date +%Y_%m_%d`;
+    chomp($date);
+    my $receipt_file_name = "${date}__${file_friendly_study_alias}.xml";
     
-    my $report =
+    my $report = 
     
       "To validate, add or modify your data via ENA's REST service you can run one of the following commands:\n\n"
     . "  - For the VALIDATE action, run this:\n\n";
 
     my $cmd = qq(curl -F "SUBMISSION=\@$generated_file->{'submission'}->{VALIDATE}" -F "STUDY=\@$generated_file->{'study'}" -F"SAMPLE=\@$generated_file->{'sample'}" -F"EXPERIMENT=\@$generated_file->{'experiment'}" -F"RUN=\@$generated_file->{'run'}"  $authenticated_url);
     
-    $report .= "$cmd | xmlstarlet fo | tee last_receipt.${file_friendly_study_alias}.xml \n\n";    
+    $report .= "$cmd | xmlstarlet fo | tee $receipt_file_name \n\n";
     $report .= "  - For the ADD action, run this:\n\n";
 
     $cmd = qq(curl -F "SUBMISSION=\@$generated_file->{'submission'}->{ADD}" -F "STUDY=\@$generated_file->{'study'}" -F"SAMPLE=\@$generated_file->{'sample'}" -F"EXPERIMENT=\@$generated_file->{'experiment'}" -F"RUN=\@$generated_file->{'run'}"  $authenticated_url);
     
-    $report .= "$cmd | xmlstarlet fo | tee last_receipt.${file_friendly_study_alias}.xml \n\n";    
+    $report .= "$cmd | xmlstarlet fo | tee $receipt_file_name \n\n";
     $report .= "  - If you want to MODIFY your submission, use the one for the object type you want to change:\n\n";
     
     my @action_source_type = qw(study sample experiment run);
@@ -67,7 +70,7 @@ sub print_report_sra_xml {
         my $uc_source_type = uc($current_source_type);        
         my $cmd = qq(curl -F "SUBMISSION=\@${submission_file}" -F "$uc_source_type=\@$generated_file->{$current_source_type}" $authenticated_url);
         
-        $report .= "$cmd | xmlstarlet fo | tee last_receipt.${file_friendly_study_alias}.xml \n\n";
+        $report .= "$cmd | xmlstarlet fo | tee $receipt_file_name \n\n";
 
     }
 
