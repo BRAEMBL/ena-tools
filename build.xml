@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<project name="braembl_samtools" default="jar" basedir=".">
+	
+  <property name="src"   location="src/java" />
+  <property name="dist"  location="dist" />
+  <property name="build" location="build" />
+
+  <target name="init">
+	  <mkdir dir="${build}" />
+	  <mkdir dir="${dist}" />
+  </target>
+
+  <target name="compile" depends="init" description="Compile the source ">
+	  <javac srcdir="${src}" destdir="${build}" debug="true" debugLevel="lines,vars,source" includeantruntime="false">
+		  <classpath>
+			  <fileset dir="jar">
+				  <include name="**/*.jar" />
+			  </fileset>
+		  </classpath>
+	  </javac>
+  </target>
+
+  <target name="jar" depends="compile" description="">
+	  <jar jarfile="${dist}/${name}.jar">
+		  <fileset dir="${build}/" />
+		  <fileset dir="${src}">
+			  <include name="**/*.txt" />
+		  </fileset>
+	  </jar>
+  </target>
+
+  <target name="clean" description="Clean up">
+	  <delete dir="${dist}" />
+	  <delete dir="${build}" />
+  </target>
+
+</project>
