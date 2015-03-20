@@ -12,12 +12,14 @@ import htsjdk.samtools.ValidationStringency;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.MessageFormat;
 import java.util.HashSet;
 import java.util.List;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.GnuParser;
+import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.io.FileUtils;
@@ -62,7 +64,8 @@ public class SelectAlignments {
     	Options options = new Options();    	
     	options.addOption("select", true, "A text file with the names of all transcripts that should be included into the build instructions.");
     	options.addOption("sam", true, "Sam file with buld instructions");
-    	options.addOption("out", true, "Name of sam file to be created");    	
+    	options.addOption("out", true, "Name of sam file to be created");
+    	options.addOption("help", false, "Print help");
     	
     	CommandLineParser parser = new GnuParser();
     	CommandLine cmd = null;
@@ -75,22 +78,27 @@ public class SelectAlignments {
 		
 		boolean parameterMissing = false;    	
 
+    	if(cmd.hasOption("help")) {
+
+    		HelpFormatter formatter=new HelpFormatter();
+    	    formatter.setWidth(Integer.MAX_VALUE);
+    	    formatter.printHelp("./scripts/sam/select_alignments_from_sam.pl", options, true);
+    	    System.exit(0);
+
+    	}
     	if(cmd.hasOption("select")) {
-    		System.out.println("select=" + cmd.getOptionValue("select"));
     	    t.setAllTranscriptsFile(new File(cmd.getOptionValue("select")));
-    	} else {
+       	} else {
     		System.err.println("The parameter select has not been set"); 
     	    parameterMissing = true;
     	}
     	if(cmd.hasOption("sam")) {
-    		System.out.println("sam=" + cmd.getOptionValue("sam"));
     	    t.setAssemblyBuildInstructionsBamFile(new File(cmd.getOptionValue("sam")));
     	} else {
     		System.err.println("The parameter bam has not been set"); 
     	    parameterMissing = true;
     	}
     	if(cmd.hasOption("out")) {
-    		System.out.println("out=" + cmd.getOptionValue("out"));
     	    t.setOutputBamFile(new File(cmd.getOptionValue("out")));
     	} else {
     		System.err.println("The parameter out has not been set, setting to default out.sam");

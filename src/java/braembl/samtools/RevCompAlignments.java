@@ -22,6 +22,7 @@ import java.util.List;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.GnuParser;
+import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.io.FileUtils;
@@ -66,6 +67,7 @@ public class RevCompAlignments {
     	options.addOption("revcomp", true, "A text file with the names of all transcripts whose alignments should be reverse complemented.");
     	options.addOption("sam", true, "Sam file with buld instructions");
     	options.addOption("out", true, "Name of sam file to be created");
+    	options.addOption("help", false, "Print help");
     	
     	CommandLineParser parser = new GnuParser();
     	CommandLine cmd = null;
@@ -78,6 +80,14 @@ public class RevCompAlignments {
 		
 		boolean parameterMissing = false;    	
 
+    	if(cmd.hasOption("help")) {
+
+    		HelpFormatter formatter=new HelpFormatter();
+    	    formatter.setWidth(Integer.MAX_VALUE);
+    	    formatter.printHelp("./scripts/sam/select_alignments_from_sam.pl", options, true);
+    	    System.exit(0);
+
+    	}
     	if(cmd.hasOption("revcomp")) {
     		System.out.println("revcomp=" + cmd.getOptionValue("revcomp"));
     	    t.setRevcomp(new File(cmd.getOptionValue("revcomp")));
