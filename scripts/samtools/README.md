@@ -1,7 +1,7 @@
 Description
 ===========
 
-- select_alignments_from_sam.pl: A script for creating a sam file by selecting alignments from an existing sam file
+- select_alignments_from_sam.pl: A script for creating a sam file by selecting alignments from an existing sam file.
 - revcomp_sam_alignments.pl: A script for creating a sam file based on an existing one, but where some of the alignments have been reverse complemented.
 
 Use in data submission
@@ -29,7 +29,7 @@ samtools view -h <bam_file_from_assembler> > <$tempdir/assembly_build_instructio
 Create sam file with with relevant alignments only
 
 ~~~
-./scripts/bam/select_alignments_from_bam.pl \
+./scripts/samtools/select_alignments_from_bam.pl \
 --select <file with names of contigs to be included in the final sam file, one name per line> \
 --sam $tempdir/assembly_build_instructions.sam \
 --out $tempdir/filtered.sam
@@ -38,7 +38,7 @@ Create sam file with with relevant alignments only
 Reverse complement contigs to get transcript sequences
 
 ~~~
-./scripts/bam/revcomp_bam_alignments.pl \
+./scripts/samtools/revcomp_bam_alignments.pl \
 --revcomp <file with names of contigs that should be reverse complemented, other alignments will remain unchanged> \
 --sam $tempdir/filtered.sam \
 --out $tempdir/transcript_build_instructions.sam
