@@ -1,9 +1,11 @@
 Description
 ===========
 
-This repository has scripts for helping users generate XML files with metadata about their genomic sequences that they want to submit to the European Nucleotide Archive (ENA). See the script serialise_study.pl in the scripts directory.
+Ena-tools is a collection of scripts to help data submitters with common tasks when submitting metadata to the European Nucleotide Archive (ENA). 
 
-It also provides scripts that can be useful when preparing bam files as supporting evidence for submitting annotated transcript assemblies. The scripts are in scripts/samtools.
+For submitting metadata about studies to SRA see the script serialise_study.pl in the scripts directory. It uses ENA's REST service which is useful for submitting batches of samples and generates a receipt in html format for keeping a record of the accessions that have been assigned.
+
+When submitting annotated transcript assemblies, it is necessary to provide bam files as supporting evidence showing how the transcripts were constructed from the reads. The scripts in scripts/samtools can be useful when preparing these bam files.
 
 Disclaimer
 ==========
