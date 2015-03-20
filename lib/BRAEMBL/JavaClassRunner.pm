@@ -13,9 +13,7 @@ has 'java_main_class' => (
 
 has 'logger' => (
   is       => 'rw', 
-  builder  => sub {
-    return get_logger;
-  }
+  builder  => 'get_logger'
 );
 
 sub check_dependencies {
