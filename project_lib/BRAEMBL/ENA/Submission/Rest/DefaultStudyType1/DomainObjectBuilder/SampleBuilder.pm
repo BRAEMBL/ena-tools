@@ -76,21 +76,26 @@ sub construct_sample_by_id {
     $sample->internal_name    ( $self->metadata->sample->{$sample_id}->{sample_name} );
     
     
-    if (exists $self->metadata->sample_attributes->{$sample_id}) {
-    
+    if (
+      exists $self->metadata->sample_attributes->{$sample_id}
+    ) {
       my $sample_attributes = $self->metadata->sample_attributes->{$sample_id};
       confess('Type error!') unless(ref $sample_attributes eq 'HASH');
-      
+      $self->remove_empty_attributes($sample_attributes);
+      $sample->attributes($sample_attributes);
+    }
+
+    if (
+      exists $self->metadata->sample_attributes->{$sample_id}
+      && $self->checklist_has_been_used($sample_id)
+    ) {
+      my $sample_attributes = $self->metadata->sample_attributes->{$sample_id};
       # Attribute units created as a side effect, must find a better solution 
       # for this in the future.
       #
-      my $attribute_units = $self->remove_units($sample_id, $sample_attributes);
-      $self->remove_empty_attributes($sample_attributes);
-    
+      my $attribute_units = $self->remove_units($sample_id);
       $sample->attributes($sample_attributes);
-
-      $sample->attribute_units($attribute_units);
-      
+      $sample->attribute_units($attribute_units);      
     }
     return $sample;  
 }
@@ -123,19 +128,32 @@ sub remove_empty_attributes {
   }
 }
 
+sub checklist_has_been_used {
+
+  my $self      = shift;
+  my $sample_id = shift;
+  
+  confess('Missing sample_id parameter!') unless($sample_id);
+  
+  my $sample_attributes = $self->metadata->sample_attributes->{$sample_id};
+  my $checklist_has_been_used = exists $sample_attributes->{'ENA-CHECKLIST'};
+  
+  return $checklist_has_been_used;  
+}
+
 sub remove_units {
 
   my $self              = shift;
   my $sample_id         = shift;
-  my $sample_attributes = shift;
   
+  confess('Missing sample_id parameter!') unless($sample_id);
+  
+  my $sample_attributes = $self->metadata->sample_attributes->{$sample_id};  
   confess('Type error!') unless(ref $sample_attributes eq 'HASH');
   
   my $logger = get_logger;
   
-  my $checklist_has_been_used = exists $sample_attributes->{'ENA-CHECKLIST'};
-  
-  unless ($checklist_has_been_used) {
+  unless ($self->checklist_has_been_used($sample_id)) {
     $logger->info("No checklist has been used, so units will not be processed by this script.");
     return;
   }
@@ -187,12 +205,8 @@ sub remove_units {
       }
       
       $sample_attributes->{$current_attribute} = $value;
-      #$self->attribute_units->{$current_attribute} = $unit_in_this_attribute;
       $attribute_units->{$current_attribute} = $unit_in_this_attribute;
   }
-#   use Data::Dumper;
-#   print Dumper($attribute_units);
-#   die;
   return $attribute_units;
 }
 
